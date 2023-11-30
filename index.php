@@ -76,32 +76,32 @@ include "./components/Category.php";
             <div class="container">
                 <div class="category-item-container has-scrollbar">
                     <?php
-					$conn = $pdo->open();
-					try {
-						$stmt = $conn->prepare("SELECT category.*, COUNT(*) AS total_qty FROM products LEFT JOIN category ON category.id = products.category_id GROUP BY category_id ORDER BY total_qty DESC ");
-						$stmt->execute();
-						foreach ($stmt as $row) {
-					?>
-                    <div class="category-item">
-                        <div class="category-img-box">
-                            <img src="./dist/images/icons/dress.svg" alt="dress & frock" width="30">
-                        </div>
-                        <div class="category-content-box">
-                            <div class="category-content-flex">
-                                <h3 class="category-item-title"><?php echo $row['name']; ?></h3>
-                                <p class="category-item-amount"><?php echo $row['total_qty']; ?></p>
+                    $conn = $pdo->open();
+                    try {
+                        $stmt = $conn->prepare("SELECT category.*, COUNT(*) AS total_qty FROM products LEFT JOIN category ON category.id = products.category_id GROUP BY category_id ORDER BY total_qty DESC ");
+                        $stmt->execute();
+                        foreach ($stmt as $row) {
+                    ?>
+                            <div class="category-item">
+                                <div class="category-img-box">
+                                    <img src=<?php echo $row['icon'] ?> alt="dress & frock" width="30">
+                                </div>
+                                <div class="category-content-box">
+                                    <div class="category-content-flex">
+                                        <h3 class="category-item-title"><?php echo $row['name']; ?></h3>
+                                        <p class="category-item-amount"><?php echo $row['total_qty']; ?></p>
+                                    </div>
+                                    <?php
+                                    echo "<li><a href='category.php?category=" . $row['cat_slug'] . "' class='category-btn'>Show all</a></li>";  ?>
+                                </div>
                             </div>
-                            <?php
-									echo "<li><a href='category.php?category=" . $row['cat_slug'] . "' class='category-btn'>Show all</a></li>";  ?>
-                        </div>
-                    </div>
                     <?php
-						}
-					} catch (PDOException $e) {
-						echo "There is some problem in connection: " . $e->getMessage();
-					}
-					$pdo->close();
-					?>
+                        }
+                    } catch (PDOException $e) {
+                        echo "There is some problem in connection: " . $e->getMessage();
+                    }
+                    $pdo->close();
+                    ?>
                 </div>
             </div>
         </div>
@@ -116,21 +116,21 @@ include "./components/Category.php";
                         <div class="showcase-wrapper">
                             <div class="showcase-container">
                                 <?php
-								$month = date('m');
-								$conn = $pdo->open();
-								try {
-									$inc = 3;
-									$stmt = $conn->prepare("SELECT *, SUM(quantity) AS total_qty FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id WHERE MONTH(sales_date) = '$month' GROUP BY details.product_id ORDER BY total_qty DESC LIMIT 6");
-									$stmt->execute();
-									foreach ($stmt as $row) {
-										$image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
-										BestSellers($row['name'], $row['slug'], "75.00", number_format($row['price'], 2), $image, 2);
-									}
-								} catch (PDOException $e) {
-									echo "There is some problem in connection: " . $e->getMessage();
-								}
-								$pdo->close();
-								?>
+                                $month = date('m');
+                                $conn = $pdo->open();
+                                try {
+                                    $inc = 3;
+                                    $stmt = $conn->prepare("SELECT *, SUM(quantity) AS total_qty FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id WHERE MONTH(sales_date) = '$month' GROUP BY details.product_id ORDER BY total_qty DESC LIMIT 6");
+                                    $stmt->execute();
+                                    foreach ($stmt as $row) {
+                                        $image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
+                                        BestSellers($row['name'], $row['slug'], "75.00", number_format($row['price'], 2), $image, 2);
+                                    }
+                                } catch (PDOException $e) {
+                                    echo "There is some problem in connection: " . $e->getMessage();
+                                }
+                                $pdo->close();
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -141,20 +141,20 @@ include "./components/Category.php";
                         <h2 class="title">New Products</h2>
                         <div class="product-grid">
                             <?php
-							$conn = $pdo->open();
-							try {
-								$inc = 3;
-								$stmt = $conn->prepare("SELECT *, SUM(quantity) AS total_qty FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id   GROUP BY details.product_id ORDER BY total_qty DESC LIMIT 6");
-								$stmt->execute();
-								foreach ($stmt as $row) {
-									$image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
-									ShowCase($row['name'], $row['slug'],  3, number_format($row['price'], 2), "15%", "75.00", $image, "./dist/images/products/jacket-4.jpg");
-								}
-							} catch (PDOException $e) {
-								echo "There is some problem in connection: " . $e->getMessage();
-							}
-							$pdo->close();
-							?>
+                            $conn = $pdo->open();
+                            try {
+                                $inc = 3;
+                                $stmt = $conn->prepare("SELECT *, SUM(quantity) AS total_qty FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id   GROUP BY details.product_id ORDER BY total_qty DESC LIMIT 6");
+                                $stmt->execute();
+                                foreach ($stmt as $row) {
+                                    $image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
+                                    ShowCase($row['name'], $row['slug'],  3, number_format($row['price'], 2), "15%", "75.00", $image, "./dist/images/products/jacket-4.jpg");
+                                }
+                            } catch (PDOException $e) {
+                                echo "There is some problem in connection: " . $e->getMessage();
+                            }
+                            $pdo->close();
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -164,14 +164,12 @@ include "./components/Category.php";
         <div class="blog">
             <div class="container">
                 <div class="service">
-                    <h2 class="title">Our Newsletter</h2>
+                    <h2 class="title">Announcements</h2>
                 </div>
                 <div class="blog-container has-scrollbar">
                     <div class="blog-card">
                         <a href="#">
-                            <img src="./dist/images/blog-1.jpg"
-                                alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300"
-                                class="blog-banner">
+                            <img src="./dist/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">Fashion</a>
@@ -185,9 +183,7 @@ include "./components/Category.php";
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="./dist/images/blog-2.jpg"
-                                alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner"
-                                width="300">
+                            <img src="./dist/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner" width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">Clothes</a>
@@ -202,9 +198,7 @@ include "./components/Category.php";
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="./dist/images/blog-3.jpg"
-                                alt="EBT vendors: Claim Your Share of SNAP Online Revenue." class="blog-banner"
-                                width="300">
+                            <img src="./dist/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue." class="blog-banner" width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">Shoes</a>
@@ -218,9 +212,7 @@ include "./components/Category.php";
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="./dist/images/blog-4.jpg"
-                                alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner"
-                                width="300">
+                            <img src="./dist/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner" width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">Electronics</a>
