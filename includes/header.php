@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="magnify/magnify.min.css">
 
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
     <!-- Paypal Express -->
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
@@ -35,6 +36,8 @@
     <!--- About -->
     <link href="dist/css/aboutus.css" rel="stylesheet" />
     <link href="dist/css/responsive.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./dist/css/style-prefix.css">
 
     <!--- ionicon link -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
