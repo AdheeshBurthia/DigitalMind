@@ -25,9 +25,9 @@ $pdo->close();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>DIGITAL MIND</title>
 	<!--- favicon -->
-	<link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./dist/images/logo/favicon.ico" type="image/x-icon">
 	<!--- custom css link -->
-	<link rel="stylesheet" href="./assets/css/style-prefix.css">
+	<link rel="stylesheet" href="./dist/css/style-prefix.css">
 	<!--- google font link -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@ $pdo->close();
 								$stmt->execute(['catid' => $catid]);
 								foreach ($stmt as $row) {
 									$image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
-									ShowCase($row['name'], $row['slug'],  3, number_format($row['price'], 2), "15%", "75.00", $image, "./assets/images/products/jacket-4.jpg");
+									ShowCase($row['name'], $row['slug'],  3, number_format($row['price'], 2), "15%", "75.00", $image, "./dist/images/products/jacket-4.jpg");
 								}
 							} catch (PDOException $e) {
 								echo "There is some problem in connection: " . $e->getMessage();
@@ -74,7 +74,7 @@ $pdo->close();
 		</div>
 	</main>
 	<!--- custom js link -->
-	<script src="./assets/js/script.js"></script>
+	<script src="./dist/js/script.js"></script>
 	<!--- ionicon link -->
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

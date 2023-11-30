@@ -14,9 +14,9 @@ include "./components/Category.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>DIGITAL MIND</title>
 	<!--- favicon -->
-	<link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./dist/images/logo/favicon.ico" type="image/x-icon">
 	<!--- custom css link -->
-	<link rel="stylesheet" href="./assets/css/style-prefix.css">
+	<link rel="stylesheet" href="./dist/css/style-prefix.css">
 	<!--- google font link -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@ include "./components/Category.php";
 				<ion-icon name="close-outline"></ion-icon>
 			</button>
 			<div class="newsletter-img">
-				<img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+				<img src="./dist/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
 			</div>
 			<div class="newsletter">
 				<form action="#">
@@ -55,7 +55,7 @@ include "./components/Category.php";
 			<ion-icon name="close-outline"></ion-icon>
 		</button>
 		<div class="toast-banner">
-			<img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
+			<img src="./dist/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
 		</div>
 		<div class="toast-detail">
 			<p class="toast-message">
@@ -82,7 +82,7 @@ include "./components/Category.php";
 					?>
 							<div class="category-item">
 								<div class="category-img-box">
-									<img src="./assets/images/icons/dress.svg" alt="dress & frock" width="30">
+									<img src="./dist/images/icons/dress.svg" alt="dress & frock" width="30">
 								</div>
 								<div class="category-content-box">
 									<div class="category-content-flex">
@@ -146,7 +146,7 @@ include "./components/Category.php";
 								$stmt->execute();
 								foreach ($stmt as $row) {
 									$image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
-									ShowCase($row['name'], $row['slug'],  3, number_format($row['price'], 2), "15%", "75.00", $image, "./assets/images/products/jacket-4.jpg");
+									ShowCase($row['name'], $row['slug'],  3, number_format($row['price'], 2), "15%", "75.00", $image, "./dist/images/products/jacket-4.jpg");
 								}
 							} catch (PDOException $e) {
 								echo "There is some problem in connection: " . $e->getMessage();
@@ -167,7 +167,7 @@ include "./components/Category.php";
 				<div class="blog-container has-scrollbar">
 					<div class="blog-card">
 						<a href="#">
-							<img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
+							<img src="./dist/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
 						</a>
 						<div class="blog-content">
 							<a href="#" class="blog-category">Fashion</a>
@@ -181,7 +181,7 @@ include "./components/Category.php";
 					</div>
 					<div class="blog-card">
 						<a href="#">
-							<img src="./assets/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner" width="300">
+							<img src="./dist/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner" width="300">
 						</a>
 						<div class="blog-content">
 							<a href="#" class="blog-category">Clothes</a>
@@ -195,7 +195,7 @@ include "./components/Category.php";
 					</div>
 					<div class="blog-card">
 						<a href="#">
-							<img src="./assets/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue." class="blog-banner" width="300">
+							<img src="./dist/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue." class="blog-banner" width="300">
 						</a>
 						<div class="blog-content">
 							<a href="#" class="blog-category">Shoes</a>
@@ -209,7 +209,7 @@ include "./components/Category.php";
 					</div>
 					<div class="blog-card">
 						<a href="#">
-							<img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner" width="300">
+							<img src="./dist/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner" width="300">
 						</a>
 						<div class="blog-content">
 							<a href="#" class="blog-category">Electronics</a>
@@ -227,7 +227,7 @@ include "./components/Category.php";
 	</main>
 	<!--- FOOTER-->
 	<!--- custom js link-->
-	<script src="./assets/js/script.js"></script>
+	<script src="./dist/js/script.js"></script>
 	<!--- ionicon link-->
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
