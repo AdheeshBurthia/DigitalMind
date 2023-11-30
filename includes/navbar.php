@@ -155,15 +155,18 @@
             <ion-icon name="menu-outline"></ion-icon>
         </button>
 
-        <button class="action-btn">
-            <ion-icon name="bag-handle-outline"></ion-icon>
+        <a href="cart_view.php">
+            <button class="action-btn">
+                <ion-icon name="bag-handle-outline"></ion-icon>
+                <span class="count"><span class="cart_count"></span></span>
+            </button>
+        </a>
 
-            <span class="count">0</span>
-        </button>
-
-        <button class="action-btn">
-            <ion-icon name="home-outline"></ion-icon>
-        </button>
+        <a href="./">
+            <button class="action-btn">
+                <ion-icon name="home-outline"></ion-icon>
+            </button>
+        </a>
 
         <button class="action-btn">
             <ion-icon name="heart-outline"></ion-icon>
@@ -190,20 +193,40 @@
         <ul class="mobile-menu-category-list">
 
             <li class="menu-category">
-                <a href="#" class="menu-title">Home</a>
+                <a href="./" class="menu-title">Home</a>
             </li>
 
             <li class="menu-category">
-                <a href="#" class="menu-title">Printing Services</a>
+                <a href="printing.php" class="menu-title">Printing Services</a>
             </li>
 
             <li class="menu-category">
-                <a href="#" class="menu-title">About Us</a>
+                <a href="aboutus.php" class="menu-title">About Us</a>
             </li>
 
             <li class="menu-category">
-                <a href="#" class="menu-title">Contact Us</a>
+                <a href="contactus.php" class="menu-title">Contact Us</a>
             </li>
+
+            <?php
+            if (isset($_SESSION['user'])) {
+                echo '
+                    <li class="menu-category">
+                        <a href="profile.php" class="menu-title">Profile</a>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="logout.php" class="menu-title">Log out</a>
+                    </li>
+                    ';
+            } else {
+                echo '
+                    <li class="menu-category">
+                        <a href="login.php" class="menu-title">Sign in</a>
+                    </li>
+                    ';
+            }
+            ?>
 
         </ul>
 
