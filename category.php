@@ -35,6 +35,8 @@ $pdo->close();
 </head>
 
 <body>
+	<!--- NAVBAR -->
+	<?php include 'includes/navbar.php'; ?>
 	<!-- Expandable Category -->
 	<div data-modal>
 		<div data-modal-overlay></div>
@@ -73,6 +75,8 @@ $pdo->close();
 			</div>
 		</div>
 	</main>
+	<!--- FOOTER-->
+	<?php include 'includes/footer.php'; ?>
 	<!--- custom js link -->
 	<script src="./dist/js/script.js"></script>
 	<!--- ionicon link -->
