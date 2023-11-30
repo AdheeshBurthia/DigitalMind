@@ -12,14 +12,14 @@ include 'includes/scripts.php';
     <title>DIGITALMIND | Contact Us</title>
     <link rel="stylesheet" href="./dist/css/contactus.css">
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
     </style>
 </head>
 
@@ -55,8 +55,7 @@ include 'includes/scripts.php';
                     <li><a href="https://www.facebook.com/nassosanagn/"><img src="./dist/images/1.png"></a></li>
                     <li><a href="https://www.instagram.com/nassosanagn_/?hl=el"><img src="./dist/images/3.png"></a></li>
                     <li><a href="https://twitter.com/nassosanagn"><img src="./dist/images/2.png"></a></li>
-                    <li><a href="https://www.linkedin.com/in/nassos-anagnostopoulos-2b9631196/"><img
-                                src="./dist/images/5.png"></a></li>
+                    <li><a href="https://www.linkedin.com/in/nassos-anagnostopoulos-2b9631196/"><img src="./dist/images/5.png"></a></li>
 
                 </ul>
             </div>
@@ -64,24 +63,24 @@ include 'includes/scripts.php';
                 <h2>Send a Message</h2>
                 <div class="formBox">
                     <div class="inputBox w50">
-                        <input type="text" name="" required>
                         <span>First Name</span>
+                        <input type="text" name="" required>
                     </div>
                     <div class="inputBox w50">
-                        <input type="text" required>
                         <span>Last Name</span>
-                    </div>
-                    <div class="inputBox w50">
-                        <input type="email" required>
-                        <span>Email Address</span>
-                    </div>
-                    <div class="inputBox w50">
                         <input type="text" required>
+                    </div>
+                    <div class="inputBox w50">
+                        <span>Email Address</span>
+                        <input type="email" required>
+                    </div>
+                    <div class="inputBox w50">
                         <span>Mobile Number</span>
+                        <input type="text" required>
                     </div>
                     <div class="inputBox w100">
-                        <textarea required></textarea>
                         <span>Write your message here...</span>
+                        <textarea required></textarea>
                     </div>
                     <div class="inputBox w100">
                         <input type="submit" value="Send">
