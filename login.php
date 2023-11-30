@@ -22,7 +22,7 @@ if (isset($_SESSION['user'])) {
         <div class="forms-container">
             <div class="signin-signup">
                 <form action="verify.php" method="POST" class="sign-in-form">
-                    <h2 class="title">Log In</h2>
+                    <h2 class="title">Sign In</h2>
                     <?php
                     if (isset($_SESSION['error'])) {
                         echo "
@@ -49,7 +49,7 @@ if (isset($_SESSION['user'])) {
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" name="password" required />
                     </div>
-                    <input type="submit" value="Login" name="login" class="btn solid" />
+                    <input type="submit" value="Sign in" name="login" class="btn solid" />
 
                     <div class="forgot-password">
                         <a href="password_forgot.php">
