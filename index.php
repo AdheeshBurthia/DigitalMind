@@ -1,6 +1,7 @@
 <?php
 include 'includes/session.php';
-// include 'includes/header.php';
+include 'includes/header.php';
+include 'includes/scripts.php';
 include "./components/ShowCase.php";
 include "./components/BestSeller.php";
 include "./components/Category.php";
@@ -24,6 +25,9 @@ include "./components/Category.php";
 </head>
 
 <body>
+	<!--- NAVBAR -->
+	<?php include 'includes/navbar.php'; ?>
+
 	<div class="overlay" data-overlay></div>
 	<!--- MODAL -->
 	<div class="modal" data-modal>
@@ -186,7 +190,8 @@ include "./components/Category.php";
 						<div class="blog-content">
 							<a href="#" class="blog-category">Clothes</a>
 							<h3>
-								<a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+								<a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup
+									Battle.</a>
 							</h3>
 							<p class="blog-meta">
 								By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
@@ -214,7 +219,8 @@ include "./components/Category.php";
 						<div class="blog-content">
 							<a href="#" class="blog-category">Electronics</a>
 							<h3>
-								<a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+								<a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup
+									Battle.</a>
 							</h3>
 							<p class="blog-meta">
 								By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
@@ -225,7 +231,10 @@ include "./components/Category.php";
 			</div>
 		</div>
 	</main>
+
 	<!--- FOOTER-->
+	<?php include 'includes/footer.php'; ?>
+
 	<!--- custom js link-->
 	<script src="./dist/js/script.js"></script>
 	<!--- ionicon link-->

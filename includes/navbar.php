@@ -1,112 +1,280 @@
-<header class="main-header">
-  <nav class="navbar navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="index.php" class="navbar-brand"><b>Ecommerce</b>Site</a>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-          <i class="fa fa-bars"></i>
-        </button>
-      </div>
+<!--
+    - HEADER
+  -->
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="index.php">HOME</a></li>
-          <li><a href="">ABOUT US</a></li>
-          <li><a href="">CONTACT US</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORY <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <?php
-             
-                $conn = $pdo->open();
-                try{
-                  $stmt = $conn->prepare("SELECT * FROM category");
-                  $stmt->execute();
-                  foreach($stmt as $row){
-                    echo "
-                      <li><a href='category.php?category=".$row['cat_slug']."'>".$row['name']."</a></li>
-                    ";                  
-                  }
-                }
-                catch(PDOException $e){
-                  echo "There is some problem in connection: " . $e->getMessage();
-                }
+<header>
 
-                $pdo->close();
+    <div class="header-top">
 
-              ?>
-            </ul>
-          </li>
-        </ul>
-        <form method="POST" class="navbar-form navbar-left" action="search.php">
-          <div class="input-group">
-              <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Search for Product" required>
-              <span class="input-group-btn" id="searchBtn" style="display:none;">
-                  <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i> </button>
-              </span>
-          </div>
-        </form>
-      </div>
-      <!-- /.navbar-collapse -->
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li class="dropdown messages-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-shopping-cart"></i>
-              <span class="label label-success cart_count"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have <span class="cart_count"></span> item(s) in cart</li>
-              <li>
-                <ul class="menu" id="cart_menu">
-                </ul>
-              </li>
-              <li class="footer"><a href="cart_view.php">Go to Cart</a></li>
-            </ul>
-          </li>
-          <?php
-            if(isset($_SESSION['user'])){
-              $image = (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg';
-              echo '
-                <li class="dropdown user user-menu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="'.$image.'" class="user-image" alt="User Image">
-                    <span class="hidden-xs">'.$user['firstname'].' '.$user['lastname'].'</span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <!-- User image -->
-                    <li class="user-header">
-                      <img src="'.$image.'" class="img-circle" alt="User Image">
+        <div class="container-2">
 
-                      <p>
-                        '.$user['firstname'].' '.$user['lastname'].'
-                        <small>Member since '.date('M. Y', strtotime($user['created_on'])).'</small>
-                      </p>
-                    </li>
-                    <li class="user-footer">
-                      <div class="pull-left">
-                        <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
-                      </div>
-                      <div class="pull-right">
-                        <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
-                      </div>
-                    </li>
-                  </ul>
+            <ul class="header-social-container">
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
                 </li>
-              ';
-            }
-            else{
-              echo "
-                <li><a href='login.php'>LOGIN</a></li>
-                <li><a href='signup.php'>SIGNUP</a></li>
-              ";
-            }
-          ?>
-        </ul>
-      </div>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="header-alert-news">
+                <p>
+                    Enjoy the quality of luxury items
+                </p>
+            </div>
+
+            <div class="header-top-actions">
+
+                <select name="language">
+
+                    <option value="en-US">English</option>
+                    <option value="es-ES">Espa&ntilde;ol</option>
+                    <option value="fr">Fran&ccedil;ais</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
     </div>
-  </nav>
+
+    <div class="header-main">
+
+        <div class="container-2">
+
+            <a href="./" class="header-logo">
+                DigitalMind
+            </a>
+
+            <form method="POST" class="header-search-container" action="search.php">
+
+                <input type="search" name="keyword" class="search-field" placeholder="Enter your product name...">
+
+                <button type="submit" class="search-btn">
+                    <ion-icon name="search-outline"></ion-icon>
+                </button>
+
+            </form>
+
+            <div class="header-user-actions">
+
+                <button class="action-btn">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <span class="count">0</span>
+                </button>
+
+                <a href="cart_view.php">
+                    <button class="action-btn">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                        <span class="count"><span class="cart_count"></span></span>
+                    </button>
+                </a>
+
+                <?php
+                if (isset($_SESSION['user'])) {
+                    echo '
+                        <a href="profile.php">
+                            <button class="action-btn">
+                                <ion-icon name="person-outline"></ion-icon>
+                            </button>
+                        </a>
+
+                        <a href="logout.php">
+                            <button class="action-btn">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </button>
+                        </a>
+                        ';
+                } else {
+                    echo '
+                    <a href="login.php">
+                        <button class="action-btn">
+                            <ion-icon name="log-in-outline"></ion-icon>
+                        </button>
+                    </a>
+                    ';
+                }
+                ?>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="desktop-navigation-menu">
+
+        <div class="container-2">
+
+            <ul class="desktop-menu-category-list">
+
+                <li class="menu-category">
+                    <a href="./" class="menu-title">Home</a>
+                </li>
+
+                <li class="menu-category">
+                    <a href="./category.php" class="menu-title">Category</a>
+                </li>
+
+                <li class="menu-category">
+                    <a href="./printing.php" class="menu-title">Printing Services</a>
+                </li>
+
+                <li class="menu-category">
+                    <a href="aboutus.php" class="menu-title">About Us</a>
+                </li>
+
+                <li class="menu-category">
+                    <a href="contactus.php" class="menu-title">Contact Us</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div class="mobile-bottom-navigation">
+
+        <button class="action-btn" data-mobile-menu-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+
+            <span class="count">0</span>
+        </button>
+
+        <button class="action-btn">
+            <ion-icon name="home-outline"></ion-icon>
+        </button>
+
+        <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+
+            <span class="count">0</span>
+        </button>
+
+        <button class="action-btn" data-mobile-menu-open-btn>
+            <ion-icon name="grid-outline"></ion-icon>
+        </button>
+
+    </div>
+
+    <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
+
+        <div class="menu-top">
+            <h2 class="menu-title">Menu</h2>
+
+            <button class="menu-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+        </div>
+
+        <ul class="mobile-menu-category-list">
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">Home</a>
+            </li>
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">Category</a>
+            </li>
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">About Us</a>
+            </li>
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">Contact Us</a>
+            </li>
+
+        </ul>
+
+        <div class="menu-bottom">
+
+            <ul class="menu-category-list">
+
+                <li class="menu-category">
+
+                    <button class="accordion-menu" data-accordion-btn>
+                        <p class="menu-title">Language</p>
+
+                        <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+                    </button>
+
+                    <ul class="submenu-category-list" data-accordion>
+
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">English</a>
+                        </li>
+
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">Espa&ntilde;ol</a>
+                        </li>
+
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">Fren&ccedil;h</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+            <ul class="menu-social-container">
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
 </header>
+
+<script src="../dist/js/navbar.js"></script>
