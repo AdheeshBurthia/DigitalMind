@@ -8,7 +8,6 @@ include "./components/Category.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,13 +20,10 @@ include "./components/Category.php";
 	<!--- google font link -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
 	<!--- NAVBAR -->
 	<?php include 'includes/navbar.php'; ?>
-
 	<div class="overlay" data-overlay></div>
 	<!--- MODAL -->
 	<div class="modal" data-modal>
@@ -109,9 +105,9 @@ include "./components/Category.php";
 		</div>
 		<!--- PRODUCT -->
 		<div class="product-container">
-			<div class="container">
+			<div class="container" style="gap: 0;">
 				<!--- SIDEBAR -->
-				<div class="sidebar  has-scrollbar" data-mobile-menu>
+				<div class="sidebar  has-scrollbar" style="margin-right:30px ;" data-mobile-menu>
 					<?php Category($pdo); ?>
 					<div class="product-showcase">
 						<h3 class="showcase-heading">best sellers</h3>
@@ -231,15 +227,12 @@ include "./components/Category.php";
 			</div>
 		</div>
 	</main>
-
 	<!--- FOOTER-->
 	<?php include 'includes/footer.php'; ?>
-
 	<!--- custom js link-->
 	<script src="./dist/js/script.js"></script>
 	<!--- ionicon link-->
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

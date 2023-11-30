@@ -132,10 +132,6 @@
                 </li>
 
                 <li class="menu-category">
-                    <a href="./category.php" class="menu-title">Category</a>
-                </li>
-
-                <li class="menu-category">
                     <a href="./printing.php" class="menu-title">Printing Services</a>
                 </li>
 
@@ -198,7 +194,7 @@
             </li>
 
             <li class="menu-category">
-                <a href="#" class="menu-title">Category</a>
+                <a href="#" class="menu-title">Printing Services</a>
             </li>
 
             <li class="menu-category">
