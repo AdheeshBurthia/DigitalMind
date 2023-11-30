@@ -1,86 +1,83 @@
-<?php include 'includes/session.php'; ?>
 <?php
-	$slug = $_GET['category'];
-
-	$conn = $pdo->open();
-
-	try{
-		$stmt = $conn->prepare("SELECT * FROM category WHERE cat_slug = :slug");
-		$stmt->execute(['slug' => $slug]);
-		$cat = $stmt->fetch();
-		$catid = $cat['id'];
-	}
-	catch(PDOException $e){
-		echo "There is some problem in connection: " . $e->getMessage();
-	}
-
-	$pdo->close();
-
+// include 'includes/header.php';
+include './includes/session.php';
+include "./components/ShowCase.php";
+include "./components/BestSeller.php";
+include "./components/Category.php";
+$slug = $_GET['category'];
+$conn = $pdo->open();
+try {
+	$stmt = $conn->prepare("SELECT * FROM category WHERE cat_slug = :slug");
+	$stmt->execute(['slug' => $slug]);
+	$cat = $stmt->fetch();
+	$catid = $cat['id'];
+} catch (PDOException $e) {
+	echo "There is some problem in connection: " . $e->getMessage();
+}
+$pdo->close();
 ?>
-<?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
+<!DOCTYPE html>
+<html lang="en">
 
-	<?php include 'includes/navbar.php'; ?>
-	 
-	  <div class="content-wrapper">
-	    <div class="container">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DIGITAL MIND</title>
+	<!--- favicon -->
+	<link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+	<!--- custom css link -->
+	<link rel="stylesheet" href="./assets/css/style-prefix.css">
+	<!--- google font link -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
 
-	      <!-- Main content -->
-	      <section class="content">
-	        <div class="row">
-	        	<div class="col-sm-9">
-		            <h1 class="page-header"><?php echo $cat['name']; ?></h1>
-		       		<?php
-		       			
-		       			$conn = $pdo->open();
-
-		       			try{
-		       			 	$inc = 3;	
-						    $stmt = $conn->prepare("SELECT * FROM products WHERE category_id = :catid");
-						    $stmt->execute(['catid' => $catid]);
-						    foreach ($stmt as $row) {
-						    	$image = (!empty($row['photo'])) ? 'images/'.$row['photo'] : 'images/noimage.jpg';
-						    	$inc = ($inc == 3) ? 1 : $inc + 1;
-	       						if($inc == 1) echo "<div class='row'>";
-	       						echo "
-	       							<div class='col-sm-4'>
-	       								<div class='box box-solid'>
-		       								<div class='box-body prod-body'>
-		       									<img src='".$image."' width='100%' height='230px' class='thumbnail'>
-		       									<h5><a href='product.php?product=".$row['slug']."'>".$row['name']."</a></h5>
-		       								</div>
-		       								<div class='box-footer'>
-		       									<b>&#36; ".number_format($row['price'], 2)."</b>
-		       								</div>
-	       								</div>
-	       							</div>
-	       						";
-	       						if($inc == 3) echo "</div>";
-						    }
-						    if($inc == 1) echo "<div class='col-sm-4'></div><div class='col-sm-4'></div></div>"; 
-							if($inc == 2) echo "<div class='col-sm-4'></div></div>";
-						}
-						catch(PDOException $e){
-							echo "There is some problem in connection: " . $e->getMessage();
-						}
-
-						$pdo->close();
-
-		       		?> 
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
-	        </div>
-	      </section>
-	     
-	    </div>
-	  </div>
-  
-  	<?php include 'includes/footer.php'; ?>
-</div>
-
-<?php include 'includes/scripts.php'; ?>
+<body>
+	<!-- Expandable Category -->
+	<div data-modal>
+		<div data-modal-overlay></div>
+		<div> <button data-modal-close> </button> </div>
+	</div>
+	<div data-toast> <button data-toast-close> </button> </div>
+	<main>
+		<!--- PRODUCT -->
+		<div class="product-container">
+			<div class="container">
+				<!--- SIDEBAR -->
+				<?php Category($pdo); ?>
+				<div class="product-box">
+					<!-- - PRODUCT GRID -->
+					<div class="product-main">
+						<h2 class="title">New Products</h2>
+						<div class="product-grid">
+							<?php
+							$conn = $pdo->open();
+							try {
+								$inc = 3;
+								$stmt = $conn->prepare("SELECT * FROM products WHERE category_id = :catid");
+								$stmt->execute(['catid' => $catid]);
+								foreach ($stmt as $row) {
+									$image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
+									ShowCase($row['name'], $row['slug'],  3, number_format($row['price'], 2), "15%", "75.00", $image, "./assets/images/products/jacket-4.jpg");
+								}
+							} catch (PDOException $e) {
+								echo "There is some problem in connection: " . $e->getMessage();
+							}
+							$pdo->close();
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--- custom js link -->
+	<script src="./assets/js/script.js"></script>
+	<!--- ionicon link -->
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
