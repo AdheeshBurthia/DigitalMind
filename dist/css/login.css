@@ -216,14 +216,20 @@ form.sign-in-form {
   padding: 0.7rem 0;
 }
 
-.btn.transparent {
+.content .btn.transparent {
   margin: 0;
   background: none;
   border: 2px solid #fff;
-  width: 130px;
-  height: 41px;
+  padding: 0.5rem 1.5rem;
   font-weight: 600;
   font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.content .btn.transparent:hover {
+  background: #fff;
+  color: #5995fd;
+  text-decoration: none;
 }
 
 .right-panel .image,
@@ -270,6 +276,27 @@ form.sign-in-form {
   pointer-events: all;
 }
 
+.forgot-password {
+  padding: 0.7rem 0;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+  color: #4d84e2;
+}
+
+.input-recaptcha {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .callout {
   border-radius: 3px;
   margin: 0 0 20px 0;
@@ -304,6 +331,14 @@ form.sign-in-form {
     transition: 1s 0.8s ease-in-out;
   }
 
+  .signup-container {
+    height: 120vh;
+  }
+
+  .signup {
+    top: 92%;
+  }
+
   .signin-signup,
   .container.sign-up-mode .signin-signup {
     left: 50%;
@@ -312,6 +347,7 @@ form.sign-in-form {
   .panels-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr 1fr;
+    overflow: scroll;
   }
 
   .panel {
@@ -368,6 +404,10 @@ form.sign-in-form {
     transition: 2s ease-in-out;
   }
 
+  .signup-container:before {
+    bottom: 76%;
+  }
+
   .container.sign-up-mode:before {
     transform: translate(-50%, 100%);
     bottom: 32%;
@@ -396,6 +436,14 @@ form.sign-in-form {
 }
 
 @media (max-width: 570px) {
+  .signup-container {
+    height: 120vh;
+  }
+
+  .signup {
+    top: 92%;
+  }
+
   form {
     padding: 0 1.5rem;
   }
@@ -413,6 +461,10 @@ form.sign-in-form {
   .container:before {
     bottom: 72%;
     left: 50%;
+  }
+
+  .signup-container:before {
+    bottom: 76%;
   }
 
   .container.sign-up-mode:before {
