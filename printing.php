@@ -21,7 +21,7 @@ include 'includes/scripts.php';
         <form action="quote.php" method="post" enctype="multipart/form-data" class="printing-form">
             <label for="productName">Product Name:</label>
             <input type="text" id="productName" name="productName" required>
-            <br><br>
+            <br>
 
             <label for="paper_format">Paper Format:</label>
             <select id="paper_format" name="paper_format">
@@ -44,7 +44,7 @@ include 'includes/scripts.php';
 
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" required>
-            <br><br>
+            <br>
 
             <label for="color">Color or Black:</label>
             <select id="color" name="color">
@@ -115,7 +115,7 @@ include 'includes/scripts.php';
 
             <label for="file">Upload File:</label>
             <input type="file" id="file" name="file">
-            <br><br>
+            <br>
 
             <label for="phone">Phone Number:</label>
             <input type="text" id="phone" name="phone">
