@@ -198,6 +198,10 @@ section {
   background: rgb(62, 126, 238);
 }
 
+.contactForm .callout {
+  margin-top: -50px;
+}
+
 /* make the form responsive */
 @media (max-width: 1200px) {
   .container {

@@ -12,14 +12,14 @@ include 'includes/scripts.php';
     <title>DIGITALMIND | Contact Us</title>
     <link rel="stylesheet" href="./dist/css/contactus.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
     </style>
 </head>
 
@@ -55,38 +55,52 @@ include 'includes/scripts.php';
                     <li><a href="https://www.facebook.com/nassosanagn/"><img src="./dist/images/1.png"></a></li>
                     <li><a href="https://www.instagram.com/nassosanagn_/?hl=el"><img src="./dist/images/3.png"></a></li>
                     <li><a href="https://twitter.com/nassosanagn"><img src="./dist/images/2.png"></a></li>
-                    <li><a href="https://www.linkedin.com/in/nassos-anagnostopoulos-2b9631196/"><img src="./dist/images/5.png"></a></li>
+                    <li><a href="https://www.linkedin.com/in/nassos-anagnostopoulos-2b9631196/"><img
+                                src="./dist/images/5.png"></a></li>
 
                 </ul>
             </div>
-            <div class="contactForm">
+            <form method="POST" action="contact_mail.php" class="contactForm">
+                <?php
+                if (isset($_SESSION['error'])) {
+                    echo "
+                            <div class='callout callout-danger text-center'>
+                                <p>" . $_SESSION['error'] . "</p> 
+                            </div>
+                            ";
+                    unset($_SESSION['error']);
+                }
+                if (isset($_SESSION['success'])) {
+                    echo "
+                            <div class='callout callout-success text-center'>
+                                <p>" . $_SESSION['success'] . "</p> 
+                            </div>
+                            ";
+                    unset($_SESSION['success']);
+                }
+                ?>
                 <h2>Send a Message</h2>
                 <div class="formBox">
                     <div class="inputBox w50">
-                        <span>First Name</span>
-                        <input type="text" name="" required>
+                        <input type="text" placeholder="First Name" name="firstname">
                     </div>
                     <div class="inputBox w50">
-                        <span>Last Name</span>
-                        <input type="text" required>
+                        <input type="text" placeholder="Last Name" name="lastname">
                     </div>
                     <div class="inputBox w50">
-                        <span>Email Address</span>
-                        <input type="email" required>
+                        <input type="email" placeholder="Email Address" name="email">
                     </div>
                     <div class="inputBox w50">
-                        <span>Mobile Number</span>
-                        <input type="text" required>
+                        <input type="text" placeholder="Mobile Number" name="mobile">
                     </div>
                     <div class="inputBox w100">
-                        <span>Write your message here...</span>
-                        <textarea required></textarea>
+                        <textarea name="message" placeholder="Write your message here. . ."></textarea>
                     </div>
                     <div class="inputBox w100">
                         <input type="submit" value="Send">
                     </div>
                 </div>
-            </div>
+            </form>
     </section>
     <!--- FOOTER-->
     <?php include 'includes/footer.php'; ?>
