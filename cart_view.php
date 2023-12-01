@@ -4,16 +4,13 @@
 
 <body class="hold-transition skin-blue layout-top-nav">
     <div class="wrapper">
-
         <?php include 'includes/navbar.php'; ?>
-
         <div class="content-wrapper">
             <div class="container">
-
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-12">
                             <h1 class="page-header">YOUR CART</h1>
                             <div class="box box-solid">
                                 <div class="box-body">
@@ -43,18 +40,13 @@
                             }
                             ?>
                         </div>
-                        <div class="col-sm-3">
-                            <?php include 'includes/sidebar.php'; ?>
-                        </div>
                     </div>
                 </section>
-
             </div>
         </div>
         <?php $pdo->close(); ?>
         <?php include 'includes/footer.php'; ?>
     </div>
-
     <?php include 'includes/scripts.php'; ?>
     <script>
         var total = 0;
@@ -78,7 +70,6 @@
                     }
                 });
             });
-
             $(document).on('click', '.minus', function(e) {
                 e.preventDefault();
                 var id = $(this).data('id');
@@ -104,7 +95,6 @@
                     }
                 });
             });
-
             $(document).on('click', '.add', function(e) {
                 e.preventDefault();
                 var id = $(this).data('id');
@@ -128,10 +118,8 @@
                     }
                 });
             });
-
             getDetails();
             getTotal();
-
         });
 
         function getDetails() {
@@ -161,19 +149,15 @@
     <script>
         paypal.Button.render({
             env: 'sandbox', // change for production if app is live,
-
             client: {
                 sandbox: 'ASb1ZbVxG5ZFzCWLdYLi_d1-k5rmSjvBZhxP2etCxBKXaJHxPba13JJD_D3dTNriRbAv3Kp_72cgDvaZ',
                 //production: 'AaBHKJFEej4V6yaArjzSx9cuf-UYesQYKqynQVCdBlKuZKawDDzFyuQdidPOBSGEhWaNQnnvfzuFB9SM'
             },
-
             commit: true, // Show a 'Pay Now' button
-
             style: {
                 color: 'gold',
                 size: 'small'
             },
-
             payment: function(data, actions) {
                 return actions.payment.create({
                     payment: {
@@ -187,13 +171,11 @@
                     }
                 });
             },
-
             onAuthorize: function(data, actions) {
                 return actions.payment.execute().then(function(payment) {
                     window.location = 'sales.php?pay=' + payment.id;
                 });
             },
-
         }, '#paypal-button');
     </script>
 </body>
