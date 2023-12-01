@@ -1,5 +1,6 @@
 <?php
 include 'includes/header.php';
+include 'includes/scripts.php';
 ?>
 
 <!DOCTYPE html>
@@ -120,7 +121,7 @@ include 'includes/header.php';
             <input type="text" id="phone" name="phone">
             <br><br>
 
-            <input type="submit" value="Send for Quote">
+            <input type="submit" value="Ask for Quotation">
         </form>
     </section>
 
@@ -128,59 +129,60 @@ include 'includes/header.php';
     <?php include 'includes/footer.php'; ?>
 
     <script>
-    // JavaScript code
-    window.addEventListener("DOMContentLoaded", function() {
-        var paperFormatSelect = document.getElementById("paper_format");
-        var customPaperInput = document.getElementById("custom_paper_input");
+        // JavaScript code
+        window.addEventListener("DOMContentLoaded", function() {
+            var paperFormatSelect = document.getElementById("paper_format");
+            var customPaperInput = document.getElementById("custom_paper_input");
 
-        paperFormatSelect.addEventListener("change", function() {
-            if (paperFormatSelect.value === "custom") {
-                customPaperInput.style.display = "block";
-            } else {
-                customPaperInput.style.display = "none";
-            }
+            paperFormatSelect.addEventListener("change", function() {
+                if (paperFormatSelect.value === "custom") {
+                    customPaperInput.style.display = "block";
+                } else {
+                    customPaperInput.style.display = "none";
+                }
+            });
         });
-    });
 
-    window.addEventListener("DOMContentLoaded", function() {
-        var coatingSelect = document.getElementById("coating");
-        var customCoatingInput = document.getElementById("customCoatingInput");
+        window.addEventListener("DOMContentLoaded", function() {
+            var coatingSelect = document.getElementById("coating");
+            var customCoatingInput = document.getElementById("customCoatingInput");
 
-        coatingSelect.addEventListener("change", function() {
-            if (coatingSelect.value === "custom") {
-                customCoatingInput.style.display = "block";
-            } else {
-                customCoatingInput.style.display = "none";
-            }
+            coatingSelect.addEventListener("change", function() {
+                if (coatingSelect.value === "custom") {
+                    customCoatingInput.style.display = "block";
+                } else {
+                    customCoatingInput.style.display = "none";
+                }
+            });
         });
-    });
 
-    window.addEventListener("DOMContentLoaded", function() {
-        var laminationSelect = document.getElementById("lamination");
-        var customLaminationInput = document.getElementById("customLaminationInput");
+        window.addEventListener("DOMContentLoaded", function() {
+            var laminationSelect = document.getElementById("lamination");
+            var customLaminationInput = document.getElementById("customLaminationInput");
 
-        laminationSelect.addEventListener("change", function() {
-            if (laminationSelect.value === "custom") {
-                customLaminationInput.style.display = "block";
-            } else {
-                customLaminationInput.style.display = "none";
-            }
+            laminationSelect.addEventListener("change", function() {
+                if (laminationSelect.value === "custom") {
+                    customLaminationInput.style.display = "block";
+                } else {
+                    customLaminationInput.style.display = "none";
+                }
+            });
         });
-    });
 
-    window.addEventListener("DOMContentLoaded", function() {
-        var paperTypeSelect = document.getElementById("paperType");
-        var customPaperInput = document.getElementById("customPaperInput");
+        window.addEventListener("DOMContentLoaded", function() {
+            var paperTypeSelect = document.getElementById("paperType");
+            var customPaperInput = document.getElementById("customPaperInput");
 
-        paperTypeSelect.addEventListener("change", function() {
-            if (paperTypeSelect.value === "custom") {
-                customPaperInput.style.display = "block";
-            } else {
-                customPaperInput.style.display = "none";
-            }
+            paperTypeSelect.addEventListener("change", function() {
+                if (paperTypeSelect.value === "custom") {
+                    customPaperInput.style.display = "block";
+                } else {
+                    customPaperInput.style.display = "none";
+                }
+            });
         });
-    });
     </script>
+
 </body>
 
 </html>
