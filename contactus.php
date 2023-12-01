@@ -45,7 +45,8 @@ include 'includes/scripts.php';
                     <li><a href="https://www.facebook.com/nassosanagn/"><img src="./dist/images/1.png"></a></li>
                     <li><a href="https://www.instagram.com/nassosanagn_/?hl=el"><img src="./dist/images/3.png"></a></li>
                     <li><a href="https://twitter.com/nassosanagn"><img src="./dist/images/2.png"></a></li>
-                    <li><a href="https://www.linkedin.com/in/nassos-anagnostopoulos-2b9631196/"><img src="./dist/images/5.png"></a></li>
+                    <li><a href="https://www.linkedin.com/in/nassos-anagnostopoulos-2b9631196/"><img
+                                src="./dist/images/5.png"></a></li>
 
                 </ul>
             </div>
@@ -68,7 +69,7 @@ include 'includes/scripts.php';
                     unset($_SESSION['success']);
                 }
                 ?>
-                <h2 class="title">Send a Message</h2>
+                <h2>Send a Message</h2>
                 <div class="formBox">
                     <div class="inputBox w50">
                         <input type="text" placeholder="First Name" name="firstname">
