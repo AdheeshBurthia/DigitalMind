@@ -63,7 +63,6 @@
                   </li>
 
               </ul>
-
               <ul class="footer-nav-list">
 
                   <li class="footer-nav-item">
@@ -132,8 +131,7 @@
                       </div>
 
                       <address class="content-2">
-                          419 State 414 Rte
-                          Beaver Dams, New York(NY), 14812, USA
+                          Royal Road, Petit Raffray, Mauritius
                       </address>
                   </li>
 
@@ -142,7 +140,7 @@
                           <ion-icon name="call-outline"></ion-icon>
                       </div>
 
-                      <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+                      <a href="tel:+607936-8058" class="footer-nav-link">5703 3434 </a>
                   </li>
 
                   <li class="footer-nav-item flex">
@@ -150,7 +148,7 @@
                           <ion-icon name="mail-outline"></ion-icon>
                       </div>
 
-                      <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
+                      <a href="mailto:example@gmail.com" class="footer-nav-link">DigitalMind@gmail.com</a>
                   </li>
 
               </ul>

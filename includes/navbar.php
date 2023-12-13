@@ -78,11 +78,6 @@
 
             <div class="header-user-actions">
 
-                <button class="action-btn">
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <span class="count">0</span>
-                </button>
-
                 <a href="cart_view.php">
                     <button class="action-btn">
                         <ion-icon name="bag-handle-outline"></ion-icon>
