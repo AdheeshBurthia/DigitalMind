@@ -27,9 +27,48 @@ include "./components/Category.php";
     <!--- NAVBAR -->
     <?php include 'includes/navbar.php'; ?>
     <div class="overlay" data-overlay></div>
-
     <main>
-        <div class="category">
+        <div class="banner">
+            <div class="container">
+                <div class="slider-container has-scrollbar">
+                    <div class="slider-item">
+                        <img src="https://i.pinimg.com/564x/60/54/87/605487f99a33a932afd9b6db36ef9892.jpg" alt="women's latest fashion sale" class="banner-img">
+                        <div class="banner-content">
+                            <p class="banner-subtitle">Trending item</p>
+                            <h2 class="banner-title">Women's latest fashion sale</h2>
+                            <p class="banner-text">
+                                starting at &dollar; <b>20</b>.00
+                            </p>
+                            <a href="#" class="banner-btn">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="https://i.pinimg.com/564x/c3/67/06/c36706eac045e04cb2ef80a1e95b5842.jpg" alt="modern sunglasses" class="banner-img">
+                        <div class="banner-content">
+                            <p class="banner-subtitle">Trending accessories</p>
+                            <h2 class="banner-title">Modern sunglasses</h2>
+                            <p class="banner-text">
+                                starting at &dollar; <b>15</b>.00
+                            </p>
+                            <a href="#" class="banner-btn">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="https://i.pinimg.com/736x/97/ba/49/97ba495fbec2300d597085b0ad6da8db.jpg" alt="modern sunglasses" class="banner-img">
+                        <div class="banner-content">
+                            <p class="banner-subtitle">Trending accessories</p>
+                            <h2 class="banner-title">Modern sunglasses</h2>
+                            <p class="banner-text">
+                                starting at &dollar; <b>15</b>.00
+                            </p>
+                            <a href="#" class="banner-btn">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- <div class="category">
             <div class="container">
                 <div class="category-item-container has-scrollbar">
                     <?php
@@ -61,7 +100,7 @@ include "./components/Category.php";
                     ?>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--- PRODUCT -->
         <div class="product-container">
             <div class="container" style="gap: 0;">
@@ -193,6 +232,41 @@ include "./components/Category.php";
     <!--- ionicon link-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var currentIndex = 0;
+            var items = $('.slider-item');
+            var totalItems = items.length;
+
+            function cycleItems() {
+                var item = $('.slider-item').eq(currentIndex);
+                items.hide();
+                item.css('display', 'flex'); // Assuming flex display for container
+            }
+
+            var autoSlide = setInterval(function() {
+                currentIndex += 1;
+                if (currentIndex > totalItems - 1) {
+                    currentIndex = 0;
+                }
+                cycleItems();
+            }, 5000); // Change slide every 5 seconds (adjust as needed)
+
+            // Optionally, pause on hover
+            $('.slider-container').hover(function() {
+                clearInterval(autoSlide);
+            }, function() {
+                autoSlide = setInterval(function() {
+                    currentIndex += 1;
+                    if (currentIndex > totalItems - 1) {
+                        currentIndex = 0;
+                    }
+                    cycleItems();
+                }, 5000);
+            });
+        });
+    </script>
 </body>
 
 </html>
