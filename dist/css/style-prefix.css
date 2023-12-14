@@ -585,6 +585,7 @@ body::-webkit-scrollbar-thumb:hover {
   border: 1px solid var(--cultured);
   -webkit-border-radius: var(--border-radius-md);
   border-radius: var(--border-radius-md);
+  box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 .search-field::-webkit-search-cancel-button {
@@ -2888,7 +2889,7 @@ footer {
     left: 0;
     width: 100%;
     height: 2px;
-    background: #cc7a00;
+    background: #fcdfad;
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
     transform: scaleX(0);

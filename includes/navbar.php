@@ -88,6 +88,12 @@
                 <?php
                 if (isset($_SESSION['user'])) {
                     echo '
+                        <a href="profile.php">
+                            <button class="action-btn">
+                                <ion-icon name="person-outline"></ion-icon>
+                            </button>
+                        </a>
+
                         <a href="logout.php">
                             <button class="action-btn">
                                 <img src="./dist/images/logout.png" alt="logout-icon" class="logout-icon">
@@ -122,10 +128,6 @@
 
                 <li class="menu-category">
                     <a href="./printing.php" class="menu-title">Printing Services</a>
-                </li>
-
-                <li class="menu-category">
-                    <a href="profile.php" class="menu-title">My Profile</a>
                 </li>
 
             </ul>

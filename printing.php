@@ -58,10 +58,6 @@ include 'includes/scripts.php';
                 <option value="none">None</option>
                 <option value="glossy">Glossy</option>
                 <option value="matte">Matte</option>
-                <option value="satin">Satin</option>
-                <option value="soft-touch">Soft Touch</option>
-                <option value="aqueous">Aqueous Coating</option>
-                <option value="uv">UV Coating</option>
                 <option value="custom">Custom</option>
             </select>
             <br><br>
@@ -75,11 +71,8 @@ include 'includes/scripts.php';
             <label for="lamination">Lamination:</label>
             <select id="lamination" name="lamination" required>
                 <option value="none">None</option>
-                <option value="glossy">Glossy Lamination</option>
-                <option value="matte">Matte Lamination</option>
-                <option value="satin">Satin Lamination</option>
-                <option value="soft-touch">Soft Touch Lamination</option>
-                <option value="anti-scratch">Anti-Scratch Lamination</option>
+                <option value="glossy">Glossy</option>
+                <option value="matte">Matte</option>
                 <option value="custom">Custom</option>
             </select>
             <br><br>
@@ -116,10 +109,6 @@ include 'includes/scripts.php';
             <label for="file">Upload File:</label>
             <input type="file" id="file" name="file">
             <br>
-
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone">
-            <br><br>
 
             <input type="submit" value="Ask for Quotation">
         </form>
