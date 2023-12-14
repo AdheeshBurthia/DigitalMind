@@ -6,16 +6,11 @@
  * copyright 2022 @codewithsadee 
  */
 
-
-
-
-
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
 
 :root {
-
   /**
    * colors
    */
@@ -66,12 +61,7 @@
    */
 
   --transition-timing: 0.2s ease;
-
 }
-
-
-
-
 
 /*-----------------------------------*\
   #RESET
@@ -112,7 +102,7 @@ span {
 }
 
 html {
-  font-family: "Poppins", sans-serif;
+  font-family: Open Sans, Helvetica, Arial, sans-serif;
   overscroll-behavior: contain;
 }
 
@@ -152,10 +142,6 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background: hsl(0, 0%, 70%);
 }
-
-
-
-
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -201,10 +187,6 @@ body::-webkit-scrollbar-thumb:hover {
   margin-bottom: 30px;
 }
 
-
-
-
-
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
@@ -231,8 +213,6 @@ body::-webkit-scrollbar-thumb:hover {
   pointer-events: all;
 }
 
-
-
 /**
  * MODAL 
  */
@@ -255,7 +235,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes popup {
-
   0% {
     opacity: 0;
     visibility: hidden;
@@ -267,7 +246,6 @@ body::-webkit-scrollbar-thumb:hover {
     visibility: visible;
     pointer-events: all;
   }
-
 }
 
 .modal.closed {
@@ -299,7 +277,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes scaleUp {
-
   0% {
     transform: scale(0.9);
   }
@@ -307,7 +284,6 @@ body::-webkit-scrollbar-thumb:hover {
   100% {
     transform: scale(1);
   }
-
 }
 
 .modal-close-btn {
@@ -375,10 +351,6 @@ body::-webkit-scrollbar-thumb:hover {
   background: var(--salmon-pink);
 }
 
-
-
-
-
 /**
  * NOTIFICATION TOAST 
  */
@@ -403,7 +375,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes slideInOut {
-
   0%,
   45%,
   100% {
@@ -418,7 +389,6 @@ body::-webkit-scrollbar-thumb:hover {
     opacity: 1;
     visibility: visible;
   }
-
 }
 
 .notification-toast.closed {
@@ -471,10 +441,6 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: var(--fs-10);
   color: var(--sonic-silver);
 }
-
-
-
-
 
 /*-----------------------------------*\
   #HEADER
@@ -638,7 +604,7 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 12px 0;
 }
 
-.accordion-menu>div {
+.accordion-menu > div {
   font-size: 14px;
 }
 
@@ -730,10 +696,6 @@ body::-webkit-scrollbar-thumb:hover {
   border-radius: var(--border-radius-md);
 }
 
-
-
-
-
 /*-----------------------------------*\
   #BANNER
 \*-----------------------------------*/
@@ -816,10 +778,6 @@ body::-webkit-scrollbar-thumb:hover {
   background: var(--eerie-black);
 }
 
-
-
-
-
 /*-----------------------------------*\
   #CATEGORY
 \*-----------------------------------*/
@@ -884,10 +842,6 @@ body::-webkit-scrollbar-thumb:hover {
   font-weight: var(--weight-500);
   text-transform: capitalize;
 }
-
-
-
-
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -1075,10 +1029,6 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--davys-gray);
 }
 
-
-
-
-
 /*-----------------------------------*\
   #PRODUCT MINIMAL
 \*-----------------------------------*/
@@ -1162,10 +1112,6 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: var(--fs-9);
   color: var(--sonic-silver);
 }
-
-
-
-
 
 /*-----------------------------------*\
   #PRODUCT FEATURED
@@ -1285,7 +1231,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .product-featured .showcase-status-bar::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 3px;
   left: 3px;
   height: 4px;
@@ -1325,10 +1271,6 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--davys-gray);
   font-size: var(--fs-11);
 }
-
-
-
-
 
 /*-----------------------------------*\
   #PRODUCT GRID
@@ -1499,10 +1441,6 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--sonic-silver);
 }
 
-
-
-
-
 /*-----------------------------------*\
   #TESTIMONIAL
 \*-----------------------------------*/
@@ -1549,10 +1487,6 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--sonic-silver);
   font-size: var(--fs-7);
 }
-
-
-
-
 
 /*-----------------------------------*\
   #CTA
@@ -1618,10 +1552,6 @@ body::-webkit-scrollbar-thumb:hover {
   margin: auto;
 }
 
-
-
-
-
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
@@ -1670,10 +1600,6 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--sonic-silver);
   font-size: var(--fs-9);
 }
-
-
-
-
 
 /*-----------------------------------*\
   #BLOG
@@ -1732,10 +1658,6 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--davys-gray);
 }
 
-
-
-
-
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -1790,14 +1712,13 @@ footer {
 
 .footer-category-link:not(:last-child)::after {
   position: absolute;
-  content: '';
+  content: "";
   top: 3px;
   right: -10px;
   background: var(--sonic-silver);
   width: 1px;
   height: 15px;
 }
-
 
 /**
  * footer nav 
@@ -1823,7 +1744,7 @@ footer {
 }
 
 .footer-nav .nav-title::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1905,36 +1826,26 @@ footer {
   color: inherit;
 }
 
-
-
-
-
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
-
 
 /**
  * responsive larger than 480px screen
  */
 
 @media (min-width: 480px) {
-
   /**
    * #CUSTOM PROPERTY
    */
 
   :root {
-
     /**
      * typography 
      */
 
     --fs-1: 1.875rem;
-
   }
-
-
 
   /**
    * #HEADER
@@ -1969,8 +1880,6 @@ footer {
     border-top-left-radius: var(--border-radius-md);
     border-top-right-radius: var(--border-radius-md);
   }
-
-
 
   /**
    * #BANNER
@@ -2008,8 +1917,6 @@ footer {
     padding: 7px 20px;
   }
 
-
-
   /**
    * #PRODUCT 
    */
@@ -2018,8 +1925,6 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
-
-
 
   /**
    * #CTA
@@ -2046,8 +1951,6 @@ footer {
     --fs-9: 1rem;
   }
 
-
-
   /**
    * #FOOTER
    */
@@ -2055,19 +1958,13 @@ footer {
   .copyright {
     --fs-8: 0.875rem;
   }
-
 }
-
-
-
-
 
 /**
  * responsive larger than 570px screen
  */
 
 @media (min-width: 570px) {
-
   /**
    * #HEADER
    */
@@ -2110,8 +2007,6 @@ footer {
     min-width: 300px;
   }
 
-
-
   /**
    * #BANNER
    */
@@ -2124,8 +2019,6 @@ footer {
     background: none;
   }
 
-
-
   /**
    * #CATEGORY
    */
@@ -2137,8 +2030,6 @@ footer {
   .category-item {
     min-width: calc(50% - 15px);
   }
-
-
 
   /**
    * #PRODUCT
@@ -2157,8 +2048,6 @@ footer {
     gap: 20px;
   }
 
-
-
   /**
    * #CTA
    */
@@ -2166,8 +2055,6 @@ footer {
   .cta-container {
     aspect-ratio: 6 / 5;
   }
-
-
 
   /**
    * #BLOG
@@ -2180,34 +2067,24 @@ footer {
   .blog-card {
     min-width: calc(50% - 15px);
   }
-
 }
-
-
-
-
 
 /**
  * responsive larger than 768px screen
  */
 
 @media (min-width: 768px) {
-
   /**
    * #CUSTOM PROPERTY
    */
 
   :root {
-
     /**
      * typography 
      */
 
     --fs-1: 2.375rem;
-
   }
-
-
 
   /**
    * #BASE 
@@ -2217,8 +2094,6 @@ footer {
     font-size: 17px;
   }
 
-
-
   /**
    * #REUSED STYLE 
    */
@@ -2227,8 +2102,6 @@ footer {
     max-width: 750px;
     margin: auto;
   }
-
-
 
   /**
    * #MODAL 
@@ -2249,8 +2122,6 @@ footer {
     text-align: left;
   }
 
-
-
   /**
    * #HEADER 
    */
@@ -2262,8 +2133,6 @@ footer {
   .header-search-container {
     flex-grow: 1;
   }
-
-
 
   /**
    * #BANNER 
@@ -2294,8 +2163,6 @@ footer {
     --fs-11: 0.75rem;
   }
 
-
-
   /**
    * #CATEGORY 
    */
@@ -2303,8 +2170,6 @@ footer {
   .category-img-box {
     padding: 20px;
   }
-
-
 
   /**
    * #PRODUCT 
@@ -2342,8 +2207,6 @@ footer {
     min-width: calc(100% - 345px);
   }
 
-
-
   /**
    * #FOOTER 
    */
@@ -2364,35 +2227,25 @@ footer {
   .footer-nav-list:not(:last-child) {
     margin-bottom: 0;
   }
-
 }
-
-
-
-
 
 /**
  * responsive larger than 1024px screen
  */
 
 @media (min-width: 1024px) {
-
   /**
    * #CUSTOM PROPERTY
    */
 
   :root {
-
     /**
      * typography 
      */
 
     --fs-1: 2.625rem;
     --fs-2: 1.125rem;
-
   }
-
-
 
   /**
    * #REUSED STYLE 
@@ -2402,8 +2255,6 @@ footer {
     max-width: 980px;
   }
 
-
-
   /**
    * #NOTIFICATION TOAST 
    */
@@ -2411,8 +2262,6 @@ footer {
   .notification-toast {
     bottom: 30px;
   }
-
-
 
   /**
    * #HEADER 
@@ -2479,7 +2328,7 @@ footer {
     position: relative;
   }
 
-  .desktop-menu-category-list .menu-category>.menu-title {
+  .desktop-menu-category-list .menu-category > .menu-title {
     position: relative;
     color: var(--onyx);
     font-size: var(--fs-7);
@@ -2489,12 +2338,12 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category>.menu-title:hover {
+  .desktop-menu-category-list .menu-category > .menu-title:hover {
     color: var(--salmon-pink);
   }
 
-  .desktop-menu-category-list .menu-category>.menu-title::after {
-    content: '';
+  .desktop-menu-category-list .menu-category > .menu-title::after {
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -2506,7 +2355,7 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category>.menu-title:hover::after {
+  .desktop-menu-category-list .menu-category > .menu-title:hover::after {
     transform: scaleX(1);
   }
 
@@ -2531,7 +2380,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover>.dropdown-panel {
+  .desktop-menu-category-list .menu-category:hover > .dropdown-panel {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
@@ -2590,7 +2439,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover>.dropdown-list {
+  .desktop-menu-category-list .menu-category:hover > .dropdown-list {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
@@ -2612,8 +2461,6 @@ footer {
   .mobile-bottom-navigation {
     display: none;
   }
-
-
 
   /**
    * #BANNER 
@@ -2644,8 +2491,6 @@ footer {
     --fs-11: 0.875rem;
   }
 
-
-
   /**
    * #CATEGORY 
    */
@@ -2657,8 +2502,6 @@ footer {
   .category-img-box {
     padding: 10px;
   }
-
-
 
   /**
    * #PRODUCT 
@@ -2728,8 +2571,6 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 
-
-
   /**
    * #TESTIMONIALS, CTA & SERVICE 
    */
@@ -2766,8 +2607,6 @@ footer {
     min-width: 20%;
   }
 
-
-
   /**
    * #BLOG
    */
@@ -2779,8 +2618,6 @@ footer {
   .blog-title {
     --fs-5: 1rem;
   }
-
-
 
   /**
    * #FOOTER
@@ -2798,19 +2635,13 @@ footer {
   .footer-bottom {
     margin-bottom: 0;
   }
-
 }
-
-
-
-
 
 /**
  * responsive larger than 1200px screen
  */
 
 @media (min-width: 1200px) {
-
   /**
    * #REUSED STYLE 
    */
@@ -2818,8 +2649,6 @@ footer {
   .container {
     max-width: 1200px;
   }
-
-
 
   /**
    * #HEADER
@@ -2829,8 +2658,6 @@ footer {
     gap: 45px;
   }
 
-
-
   /**
    * #BANNER
    */
@@ -2838,8 +2665,6 @@ footer {
   .slider-item:last-child .banner-img {
     object-position: top;
   }
-
-
 
   /**
    * #CATEGORY
@@ -2853,13 +2678,11 @@ footer {
     --fs-9: 0.824rem;
   }
 
-
-
   /**
    * #PRODUCT
    */
 
-  .product-featured .showcase>div {
+  .product-featured .showcase > div {
     min-width: calc(50% - 10px);
   }
 
@@ -2870,8 +2693,6 @@ footer {
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-
-
 
   /**
    * #TESTIMONIALS, CTA, SERVICE
@@ -2900,8 +2721,6 @@ footer {
     text-align: left;
   }
 
-
-
   /**
    * #BLOG
    */
@@ -2913,8 +2732,6 @@ footer {
   .blog-card {
     min-width: calc(25% - 22.5px);
   }
-
-
 
   /**
    * #FOOTER
@@ -2932,19 +2749,13 @@ footer {
   .footer-nav {
     padding-bottom: 50px;
   }
-
 }
-
-
-
-
 
 /**
  * responsive larger than 1400px screen
  */
 
 @media (min-width: 1400px) {
-
   /**
    * #BASE 
    */
@@ -2953,8 +2764,6 @@ footer {
     font-size: 18px;
   }
 
-
-
   /**
    * #REUSED STYLE 
    */
@@ -2962,8 +2771,6 @@ footer {
   .container {
     max-width: 1350px;
   }
-
-
 
   /**
    * #BANNER
@@ -2977,5 +2784,4 @@ footer {
     left: 110px;
     max-width: 460px;
   }
-
 }

@@ -11,34 +11,6 @@
               <ul class="footer-nav-list">
 
                   <li class="footer-nav-item">
-                      <h2 class="nav-title">Popular Categories</h2>
-                  </li>
-
-                  <li class="footer-nav-item">
-                      <a href="#" class="footer-nav-link">Fashion</a>
-                  </li>
-
-                  <li class="footer-nav-item">
-                      <a href="#" class="footer-nav-link">Electronic</a>
-                  </li>
-
-                  <li class="footer-nav-item">
-                      <a href="#" class="footer-nav-link">Cosmetic</a>
-                  </li>
-
-                  <li class="footer-nav-item">
-                      <a href="#" class="footer-nav-link">Health</a>
-                  </li>
-
-                  <li class="footer-nav-item">
-                      <a href="#" class="footer-nav-link">Watches</a>
-                  </li>
-
-              </ul>
-
-              <ul class="footer-nav-list">
-
-                  <li class="footer-nav-item">
                       <h2 class="nav-title">Products</h2>
                   </li>
 

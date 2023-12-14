@@ -71,7 +71,7 @@
                 <input type="search" name="keyword" class="search-field" placeholder="Enter your product name...">
 
                 <button type="submit" class="search-btn">
-                    <ion-icon name="search-outline"></ion-icon>
+                    <ion-icon name="search"></ion-icon>
                 </button>
 
             </form>
@@ -88,15 +88,9 @@
                 <?php
                 if (isset($_SESSION['user'])) {
                     echo '
-                        <a href="profile.php">
-                            <button class="action-btn">
-                                <ion-icon name="person-outline"></ion-icon>
-                            </button>
-                        </a>
-
                         <a href="logout.php">
                             <button class="action-btn">
-                                <ion-icon name="log-out-outline"></ion-icon>
+                                <img src="./dist/images/logout.png" alt="logout-icon" class="logout-icon">
                             </button>
                         </a>
                         ';
@@ -104,7 +98,7 @@
                     echo '
                     <a href="login.php">
                         <button class="action-btn">
-                            <ion-icon name="log-in-outline"></ion-icon>
+                            <img src="./dist/images/login.png" alt="login-icon" class="login-icon">
                         </button>
                     </a>
                     ';
@@ -118,7 +112,7 @@
 
     <nav class="desktop-navigation-menu">
 
-        <div class="container-2">
+        <div>
 
             <ul class="desktop-menu-category-list">
 
@@ -131,11 +125,7 @@
                 </li>
 
                 <li class="menu-category">
-                    <a href="aboutus.php" class="menu-title">About Us</a>
-                </li>
-
-                <li class="menu-category">
-                    <a href="contactus.php" class="menu-title">Contact Us</a>
+                    <a href="profile.php" class="menu-title">My Profile</a>
                 </li>
 
             </ul>

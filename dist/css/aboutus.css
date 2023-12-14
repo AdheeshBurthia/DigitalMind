@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: Open Sans, Helvetica, Arial, sans-serif;
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;
@@ -96,7 +96,10 @@ body {
   position: relative;
 }
 
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active .nav-link::after {
+.custom_nav-container.navbar-expand-lg
+  .navbar-nav
+  .nav-item.active
+  .nav-link::after {
   content: "";
   position: absolute;
   width: 75px;
@@ -314,11 +317,13 @@ a:focus {
   font-size: 24px;
   color: #ffffff;
   border-radius: 100%;
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      from(#e1603a),
-      to(#dc373d));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e1603a),
+    to(#dc373d)
+  );
   background: linear-gradient(to bottom, #e1603a, #dc373d);
   right: 5%;
   top: 0;
@@ -357,11 +362,13 @@ a:focus {
   font-size: 24px;
   color: #ffffff;
   border-radius: 100%;
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      from(#e1603a),
-      to(#dc373d));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e1603a),
+    to(#dc373d)
+  );
   background: linear-gradient(to bottom, #e1603a, #dc373d);
   top: 0;
   left: 5%;
@@ -427,11 +434,13 @@ a:focus {
   font-size: 24px;
   color: #ffffff;
   border-radius: 100%;
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      from(#e1603a),
-      to(#dc373d));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e1603a),
+    to(#dc373d)
+  );
   background: linear-gradient(to bottom, #e1603a, #dc373d);
   top: 0;
   right: 5%;
@@ -531,11 +540,13 @@ a:focus {
   font-size: 24px;
   color: #ffffff;
   border-radius: 100%;
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      from(#e1603a),
-      to(#dc373d));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e1603a),
+    to(#dc373d)
+  );
   background: linear-gradient(to bottom, #e1603a, #dc373d);
   top: 50%;
   left: 0;
@@ -621,11 +632,13 @@ a:focus {
   font-size: 24px;
   color: #ffffff;
   border-radius: 100%;
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      from(#e1603a),
-      to(#dc373d));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e1603a),
+    to(#dc373d)
+  );
   background: linear-gradient(to bottom, #e1603a, #dc373d);
   top: 0;
   right: 5%;
@@ -764,7 +777,7 @@ a:focus {
   color: #ffffff;
 }
 
-.info_insta .insta_container>div {
+.info_insta .insta_container > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -794,7 +807,7 @@ a:focus {
   width: 68px;
 }
 
-.info_contact>div {
+.info_contact > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -803,7 +816,7 @@ a:focus {
   align-items: flex-start;
 }
 
-.info_contact>div img {
+.info_contact > div img {
   width: 20px;
   height: auto;
   margin-right: 12px;
