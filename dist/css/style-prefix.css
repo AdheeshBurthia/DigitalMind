@@ -1,20 +1,16 @@
 /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
-
 /**
  * copyright 2022 @codewithsadee 
  */
-
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
-
 :root {
   /**
    * colors
    */
-
   --spanish-gray: hsl(0, 0%, 60%);
   --sonic-silver: hsl(0, 0%, 47%);
   --eerie-black: hsl(0, 0%, 13%);
@@ -26,11 +22,9 @@
   --cultured: hsl(0, 0%, 93%);
   --white: hsl(0, 100%, 100%);
   --onyx: hsl(0, 0%, 27%);
-
   /**
    * typography
    */
-
   --fs-1: 1.563rem;
   --fs-2: 1.375rem;
   --fs-3: 1.25rem;
@@ -42,31 +36,25 @@
   --fs-9: 0.75rem;
   --fs-10: 0.688rem;
   --fs-11: 0.625rem;
-
   --weight-300: 300;
   --weight-400: 400;
   --weight-500: 500;
   --weight-600: 600;
   --weight-700: 700;
-
   /**
    * border-radius
    */
-
   --border-radius-md: 10px;
   --border-radius-sm: 5px;
-
   /**
    * transition 
    */
-
   --transition-timing: 0.2s ease;
 }
 
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
-
 *,
 *::before,
 *::after {
@@ -80,8 +68,18 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0px;
+}
+
 li {
   list-style: none;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0px;
 }
 
 button {
@@ -141,7 +139,6 @@ body {
 /**
  * scrollbar style
  */
-
 body::-webkit-scrollbar {
   width: 15px;
 }
@@ -165,7 +162,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
-
 .container {
   padding: 0 15px;
 }
@@ -210,11 +206,9 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
-
 /**
  * overlay 
  */
-
 .overlay {
   position: fixed;
   top: 0;
@@ -238,7 +232,6 @@ body::-webkit-scrollbar-thumb:hover {
 /**
  * MODAL 
  */
-
 .modal {
   position: fixed;
   top: 0;
@@ -264,6 +257,7 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 10;
   -webkit-animation: popup 1s ease-in-out 5s forwards;
   animation: popup 1s ease-in-out 5s forwards;
+  display: none;
 }
 
 @-webkit-keyframes popup {
@@ -421,7 +415,6 @@ body::-webkit-scrollbar-thumb:hover {
 /**
  * NOTIFICATION TOAST 
  */
-
 .notification-toast {
   position: fixed;
   bottom: 80px;
@@ -455,6 +448,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @-webkit-keyframes slideInOut {
+
   0%,
   45%,
   100% {
@@ -474,6 +468,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes slideInOut {
+
   0%,
   45%,
   100% {
@@ -550,7 +545,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
-
 .header-top,
 .header-user-actions,
 .desktop-navigation-menu {
@@ -563,6 +557,10 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .header-logo {
+  font-size: 30px;
+  color: #000;
+  margin-bottom: 20px;
+  font-family: "Daggersquare", sans-serif;
   margin-bottom: 20px;
   align-items: center;
   display: flex;
@@ -752,7 +750,7 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 12px 0;
 }
 
-.accordion-menu > div {
+.accordion-menu>div {
   font-size: 14px;
 }
 
@@ -863,7 +861,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #BANNER
 \*-----------------------------------*/
-
 .banner {
   margin: 30px 0;
 }
@@ -901,8 +898,8 @@ body::-webkit-scrollbar-thumb:hover {
 .slider-item .banner-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
   -o-object-position: right;
   object-position: right;
 }
@@ -963,7 +960,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #CATEGORY
 \*-----------------------------------*/
-
 .category {
   margin-top: 40px;
   margin-bottom: 30px;
@@ -1054,7 +1050,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #SIDEBAR
 \*-----------------------------------*/
-
 .sidebar {
   background: var(--white);
   position: fixed;
@@ -1299,7 +1294,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #PRODUCT MINIMAL
 \*-----------------------------------*/
-
 .product-minimal {
   margin-bottom: 30px;
 }
@@ -1411,7 +1405,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #PRODUCT FEATURED
 \*-----------------------------------*/
-
 .product-featured {
   margin-bottom: 30px;
 }
@@ -1608,7 +1601,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #PRODUCT GRID
 \*-----------------------------------*/
-
 .product-main {
   margin-bottom: 30px;
 }
@@ -1808,7 +1800,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #TESTIMONIAL
 \*-----------------------------------*/
-
 .testimonials-box {
   margin-bottom: 50px;
 }
@@ -1857,7 +1848,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #CTA
 \*-----------------------------------*/
-
 .cta-container {
   position: relative;
   aspect-ratio: 5 / 6;
@@ -1931,7 +1921,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
-
 .service-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2000,7 +1989,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #BLOG
 \*-----------------------------------*/
-
 .blog {
   margin-bottom: 30px;
 }
@@ -2070,7 +2058,6 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
-
 footer {
   background: #f59600;
   padding: 30px 0;
@@ -2147,7 +2134,6 @@ footer {
 /**
  * footer nav 
  */
-
 .footer-nav {
   border-bottom: 1px solid white;
   padding-bottom: 30px;
@@ -2272,28 +2258,24 @@ footer {
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
-
 /**
  * responsive larger than 480px screen
  */
-
 @media (min-width: 480px) {
+
   /**
    * #CUSTOM PROPERTY
    */
-
   :root {
     /**
      * typography 
      */
-
     --fs-1: 1.875rem;
   }
 
   /**
    * #HEADER
    */
-
   .header-top {
     display: block;
     padding: 10px 0;
@@ -2329,7 +2311,6 @@ footer {
   /**
    * #BANNER
    */
-
   .slider-item {
     aspect-ratio: 5 / 3;
   }
@@ -2367,7 +2348,6 @@ footer {
   /**
    * #PRODUCT 
    */
-
   .product-grid {
     -ms-grid-columns: 1fr 30px 1fr;
     grid-template-columns: 1fr 1fr;
@@ -2377,7 +2357,6 @@ footer {
   /**
    * #CTA
    */
-
   .cta-content {
     padding: 40px;
   }
@@ -2402,7 +2381,6 @@ footer {
   /**
    * #FOOTER
    */
-
   .copyright {
     --fs-8: 0.875rem;
   }
@@ -2411,12 +2389,11 @@ footer {
 /**
  * responsive larger than 570px screen
  */
-
 @media (min-width: 570px) {
+
   /**
    * #HEADER
    */
-
   .header-top .container,
   .header-main .container {
     display: -webkit-box;
@@ -2475,7 +2452,6 @@ footer {
   /**
    * #BANNER
    */
-
   .slider-item {
     aspect-ratio: 4 / 2;
   }
@@ -2487,7 +2463,6 @@ footer {
   /**
    * #CATEGORY
    */
-
   .category-item-container {
     gap: 30px;
   }
@@ -2500,7 +2475,6 @@ footer {
   /**
    * #PRODUCT
    */
-
   .product-minimal .showcase-container {
     min-width: 50%;
   }
@@ -2517,7 +2491,6 @@ footer {
   /**
    * #CTA
    */
-
   .cta-container {
     aspect-ratio: 6 / 5;
   }
@@ -2525,7 +2498,6 @@ footer {
   /**
    * #BLOG
    */
-
   .blog-container {
     gap: 30px;
   }
@@ -2539,24 +2511,21 @@ footer {
 /**
  * responsive larger than 768px screen
  */
-
 @media (min-width: 768px) {
+
   /**
    * #CUSTOM PROPERTY
    */
-
   :root {
     /**
      * typography 
      */
-
     --fs-1: 2.375rem;
   }
 
   /**
    * #BASE 
    */
-
   html {
     font-size: 17px;
   }
@@ -2564,7 +2533,6 @@ footer {
   /**
    * #REUSED STYLE 
    */
-
   .container {
     max-width: 750px;
     margin: auto;
@@ -2573,7 +2541,6 @@ footer {
   /**
    * #MODAL 
    */
-
   .modal-content {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2600,7 +2567,6 @@ footer {
   /**
    * #HEADER 
    */
-
   .header-main .container {
     gap: 80px;
   }
@@ -2615,7 +2581,6 @@ footer {
   /**
    * #BANNER 
    */
-
   .slider-item {
     aspect-ratio: auto;
     height: 350px;
@@ -2644,7 +2609,6 @@ footer {
   /**
    * #CATEGORY 
    */
-
   .category-img-box {
     padding: 20px;
   }
@@ -2652,7 +2616,6 @@ footer {
   /**
    * #PRODUCT 
    */
-
   .product-minimal {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2710,7 +2673,6 @@ footer {
   /**
    * #FOOTER 
    */
-
   .footer-nav .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2744,17 +2706,15 @@ footer {
 /**
  * responsive larger than 1024px screen
  */
-
 @media (min-width: 1024px) {
+
   /**
    * #CUSTOM PROPERTY
    */
-
   :root {
     /**
      * typography 
      */
-
     --fs-1: 2.625rem;
     --fs-2: 1.125rem;
   }
@@ -2762,7 +2722,6 @@ footer {
   /**
    * #REUSED STYLE 
    */
-
   .container {
     max-width: 980px;
   }
@@ -2770,15 +2729,14 @@ footer {
   /**
    * #NOTIFICATION TOAST 
    */
-
   .notification-toast {
     bottom: 30px;
+    display: none;
   }
 
   /**
    * #HEADER 
    */
-
   .header-social-container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2859,13 +2817,15 @@ footer {
     -ms-flex-align: center;
     align-items: center;
     gap: 30px;
+    background-color: #f59600;
+    color: white;
   }
 
   .desktop-menu-category-list .menu-category:not(:nth-child(2)) {
     position: relative;
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title {
+  .desktop-menu-category-list .menu-category>.menu-title {
     position: relative;
     color: white;
     font-size: 14px;
@@ -2877,11 +2837,11 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title:hover {
+  .desktop-menu-category-list .menu-category>.menu-title:hover {
     color: #fcdfad;
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title::after {
+  .desktop-menu-category-list .menu-category>.menu-title::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2900,7 +2860,7 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title:hover::after {
+  .desktop-menu-category-list .menu-category>.menu-title:hover::after {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
     transform: scaleX(1);
@@ -2935,7 +2895,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover > .dropdown-panel {
+  .desktop-menu-category-list .menu-category:hover>.dropdown-panel {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -3005,7 +2965,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover > .dropdown-list {
+  .desktop-menu-category-list .menu-category:hover>.dropdown-list {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -3035,7 +2995,6 @@ footer {
   /**
    * #BANNER 
    */
-
   .banner {
     margin-top: 0;
   }
@@ -3064,7 +3023,6 @@ footer {
   /**
    * #CATEGORY 
    */
-
   .category-item {
     min-width: -webkit-calc(33.33% - 20px);
     min-width: calc(33.33% - 20px);
@@ -3077,7 +3035,6 @@ footer {
   /**
    * #PRODUCT 
    */
-
   .product-container .container {
     position: relative;
     display: -webkit-box;
@@ -3094,9 +3051,7 @@ footer {
 
   .sidebar {
     --fs-5: 0.941rem;
-
     position: -webkit-sticky;
-
     position: sticky;
     top: 30px;
     left: 0;
@@ -3163,7 +3118,6 @@ footer {
   /**
    * #TESTIMONIALS, CTA & SERVICE 
    */
-
   .testimonials-box {
     display: -webkit-box;
     display: -webkit-flex;
@@ -3213,7 +3167,6 @@ footer {
   /**
    * #BLOG
    */
-
   .blog-card {
     min-width: -webkit-calc(33.33% - 20px);
     min-width: calc(33.33% - 20px);
@@ -3226,7 +3179,6 @@ footer {
   /**
    * #FOOTER
    */
-
   .footer-nav-list {
     min-width: -webkit-calc(20% - 16px);
     min-width: calc(20% - 16px);
@@ -3246,12 +3198,11 @@ footer {
 /**
  * responsive larger than 1200px screen
  */
-
 @media (min-width: 1200px) {
+
   /**
    * #REUSED STYLE 
    */
-
   .container {
     max-width: 1200px;
   }
@@ -3259,7 +3210,6 @@ footer {
   /**
    * #HEADER
    */
-
   .desktop-menu-category-list {
     gap: 45px;
   }
@@ -3267,7 +3217,6 @@ footer {
   /**
    * #BANNER
    */
-
   .slider-item:last-child .banner-img {
     -o-object-position: top;
     object-position: top;
@@ -3276,7 +3225,6 @@ footer {
   /**
    * #CATEGORY
    */
-
   .category-item {
     min-width: -webkit-calc(25% - 22.5px);
     min-width: calc(25% - 22.5px);
@@ -3289,8 +3237,7 @@ footer {
   /**
    * #PRODUCT
    */
-
-  .product-featured .showcase > div {
+  .product-featured .showcase>div {
     min-width: -webkit-calc(50% - 10px);
     min-width: calc(50% - 10px);
   }
@@ -3307,7 +3254,6 @@ footer {
   /**
    * #TESTIMONIALS, CTA, SERVICE
    */
-
   .testimonial,
   .service {
     min-width: -webkit-calc(25% - 20px);
@@ -3345,7 +3291,6 @@ footer {
   /**
    * #BLOG
    */
-
   .blog {
     margin-bottom: 50px;
   }
@@ -3358,7 +3303,6 @@ footer {
   /**
    * #FOOTER
    */
-
   footer {
     padding-top: 50px;
   }
@@ -3376,12 +3320,11 @@ footer {
 /**
  * responsive larger than 1400px screen
  */
-
 @media (min-width: 1400px) {
+
   /**
    * #BASE 
    */
-
   html {
     font-size: 18px;
   }
@@ -3389,7 +3332,6 @@ footer {
   /**
    * #REUSED STYLE 
    */
-
   .container {
     max-width: 1350px;
   }
@@ -3397,7 +3339,6 @@ footer {
   /**
    * #BANNER
    */
-
   .slider-item {
     height: 450px;
   }

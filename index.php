@@ -27,6 +27,16 @@ include "./components/Category.php";
     <!--- NAVBAR -->
     <?php include 'includes/navbar.php'; ?>
     <div class="overlay" data-overlay></div>
+    <div class="modal" data-modal>
+        <div class="modal-close-overlay" data-modal-overlay></div>
+        <button class="modal-close-btn" data-modal-close>
+        </button>
+    </div>
+    <!--- NOTIFICATION TOAST --->
+    <div class="notification-toast" data-toast>
+        <button class="toast-close-btn" data-toast-close>
+        </button>
+    </div>
     <main>
         <div class="banner">
             <div class="container">
@@ -43,7 +53,7 @@ include "./components/Category.php";
                         </div>
                     </div>
                     <div class="slider-item">
-                        <img src="https://i.pinimg.com/564x/c3/67/06/c36706eac045e04cb2ef80a1e95b5842.jpg" alt="modern sunglasses" class="banner-img">
+                        <img src="https://i.pinimg.com/736x/97/ba/49/97ba495fbec2300d597085b0ad6da8db.jpg" alt="modern sunglasses" class="banner-img">
                         <div class="banner-content">
                             <p class="banner-subtitle">Trending accessories</p>
                             <h2 class="banner-title">Modern sunglasses</h2>
@@ -54,7 +64,7 @@ include "./components/Category.php";
                         </div>
                     </div>
                     <div class="slider-item">
-                        <img src="https://i.pinimg.com/736x/97/ba/49/97ba495fbec2300d597085b0ad6da8db.jpg" alt="modern sunglasses" class="banner-img">
+                        <img src="https://i.pinimg.com/564x/c3/67/06/c36706eac045e04cb2ef80a1e95b5842.jpg" alt="modern sunglasses" class="banner-img">
                         <div class="banner-content">
                             <p class="banner-subtitle">Trending accessories</p>
                             <h2 class="banner-title">Modern sunglasses</h2>
@@ -155,7 +165,7 @@ include "./components/Category.php";
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </main>
     <!--- FOOTER-->
     <?php include 'includes/footer.php'; ?>
@@ -172,18 +182,18 @@ include "./components/Category.php";
             var totalItems = items.length;
 
             function cycleItems() {
-                var item = $('.slider-item').eq(currentIndex);
                 items.hide();
+                var item = $('.slider-item').eq(currentIndex);
                 item.css('display', 'flex'); // Assuming flex display for container
             }
 
             var autoSlide = setInterval(function() {
                 currentIndex += 1;
-                if (currentIndex > totalItems - 1) {
+                if (currentIndex >= totalItems) {
                     currentIndex = 0;
                 }
                 cycleItems();
-            }, 5000); // Change slide every 5 seconds (adjust as needed)
+            }, 1000); // Change slide every 1 seconds (adjust as needed)
 
             // Optionally, pause on hover
             $('.slider-container').hover(function() {
@@ -191,14 +201,16 @@ include "./components/Category.php";
             }, function() {
                 autoSlide = setInterval(function() {
                     currentIndex += 1;
-                    if (currentIndex > totalItems - 1) {
+                    if (currentIndex >= totalItems) {
                         currentIndex = 0;
                     }
                     cycleItems();
-                }, 5000);
+                }, 1000);
             });
         });
     </script>
+
+
 </body>
 
 </html>
