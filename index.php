@@ -53,7 +53,7 @@ include "./components/Category.php";
                         </div>
                     </div>
                     <div class="slider-item">
-                        <img src="https://i.pinimg.com/736x/97/ba/49/97ba495fbec2300d597085b0ad6da8db.jpg" alt="modern sunglasses" class="banner-img">
+                        <img src="https://i.pinimg.com/564x/c3/67/06/c36706eac045e04cb2ef80a1e95b5842.jpg" alt="modern sunglasses" class="banner-img">
                         <div class="banner-content">
                             <p class="banner-subtitle">Trending accessories</p>
                             <h2 class="banner-title">Modern sunglasses</h2>
@@ -64,12 +64,12 @@ include "./components/Category.php";
                         </div>
                     </div>
                     <div class="slider-item">
-                        <img src="https://i.pinimg.com/564x/c3/67/06/c36706eac045e04cb2ef80a1e95b5842.jpg" alt="modern sunglasses" class="banner-img">
+                        <img src="https://i.pinimg.com/736x/97/ba/49/97ba495fbec2300d597085b0ad6da8db.jpg" alt="modern sunglasses" class="banner-img">
                         <div class="banner-content">
                             <p class="banner-subtitle">Trending accessories</p>
                             <h2 class="banner-title">Modern sunglasses</h2>
                             <p class="banner-text">
-                                starting at &dollar; <b>15</b>.00
+                                starting at &dollar; <b>12</b>.00
                             </p>
                             <a href="#" class="banner-btn">Shop now</a>
                         </div>
@@ -186,14 +186,13 @@ include "./components/Category.php";
                 var item = $('.slider-item').eq(currentIndex);
                 item.css('display', 'flex'); // Assuming flex display for container
             }
-
             var autoSlide = setInterval(function() {
                 currentIndex += 1;
                 if (currentIndex >= totalItems) {
                     currentIndex = 0;
                 }
                 cycleItems();
-            }, 1000); // Change slide every 1 seconds (adjust as needed)
+            }, 5000); // Change slide every 1 seconds (adjust as needed)
 
             // Optionally, pause on hover
             $('.slider-container').hover(function() {
@@ -205,7 +204,7 @@ include "./components/Category.php";
                         currentIndex = 0;
                     }
                     cycleItems();
-                }, 1000);
+                }, 5000);
             });
         });
     </script>

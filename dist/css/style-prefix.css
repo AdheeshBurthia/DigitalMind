@@ -861,6 +861,7 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #BANNER
 \*-----------------------------------*/
+
 .banner {
   margin: 30px 0;
 }
@@ -896,12 +897,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .slider-item .banner-img {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
-  -o-object-position: right;
-  object-position: right;
+  /* -o-object-position: right;
+  object-position: right; */
+  position: absolute;
+  right: 0%;
 }
 
 .banner-content {
@@ -2258,6 +2261,13 @@ footer {
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
+@media (max-width: 480px) {
+  .slider-item .banner-img {
+    min-width: 100%;
+    min-height: 100%; 
+  }
+}
+
 /**
  * responsive larger than 480px screen
  */
