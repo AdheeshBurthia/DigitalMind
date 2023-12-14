@@ -375,6 +375,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes slideInOut {
+
   0%,
   45%,
   100% {
@@ -604,7 +605,7 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 12px 0;
 }
 
-.accordion-menu > div {
+.accordion-menu>div {
   font-size: 14px;
 }
 
@@ -2328,7 +2329,7 @@ footer {
     position: relative;
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title {
+  .desktop-menu-category-list .menu-category>.menu-title {
     position: relative;
     color: var(--onyx);
     font-size: var(--fs-7);
@@ -2338,11 +2339,11 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title:hover {
+  .desktop-menu-category-list .menu-category>.menu-title:hover {
     color: var(--salmon-pink);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title::after {
+  .desktop-menu-category-list .menu-category>.menu-title::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2355,7 +2356,7 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title:hover::after {
+  .desktop-menu-category-list .menu-category>.menu-title:hover::after {
     transform: scaleX(1);
   }
 
@@ -2380,7 +2381,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover > .dropdown-panel {
+  .desktop-menu-category-list .menu-category:hover>.dropdown-panel {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
@@ -2439,7 +2440,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover > .dropdown-list {
+  .desktop-menu-category-list .menu-category:hover>.dropdown-list {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
@@ -2682,7 +2683,7 @@ footer {
    * #PRODUCT
    */
 
-  .product-featured .showcase > div {
+  .product-featured .showcase>div {
     min-width: calc(50% - 10px);
   }
 
