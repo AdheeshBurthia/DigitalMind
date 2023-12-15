@@ -102,11 +102,19 @@ include 'includes/scripts.php';
                 <br><br>
             </div>
 
+            <label for="lamination">Printing Sides:</label>
+            <select id="lamination" name="lamination" required>
+                <option value="none">None</option>
+                <option value="glossy">Single Sided</option>
+                <option value="matte">Double Sided</option>
+            </select>
+            <br><br>
+
             <label for="additionalDetails">Additional Details:</label>
             <textarea id="additionalDetails" name="additionalDetails" rows="4" required></textarea>
             <br><br>
 
-            <label for="file">Upload File:</label>
+            <label for="file">Upload Artwork:</label>
             <input type="file" id="file" name="file">
             <br>
 
