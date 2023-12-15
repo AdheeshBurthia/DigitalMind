@@ -24,17 +24,51 @@ include 'includes/scripts.php';
                     <tr>
                         <td class="product-details">
                             <h3>Product Details</h3>
-                            <p><strong>Product Name:</strong> <span id="productName">: Business Card</span></p>
-                            <p><strong>Quantity:</strong> <span id="quantity">: 4</span></p>
+                            <p><strong>Product Name:</strong> <span id="productName">:
+                                    <?php if (isset($_POST['productName'])) echo $_POST['productName']; ?></span></p>
+                            <p><strong>Quantity:</strong> <span id="quantity">:
+                                    <?php if (isset($_POST['quantity'])) echo $_POST['quantity']; ?></span></p>
                         </td>
                         <td class="additional-info">
                             <h3>Additional Information</h3>
-                            <p><strong>Paper Format</strong> <span id="paperFormat">: A4</span></p>
-                            <p><strong>Color or Black</strong> <span id="color">: Black</span></p>
-                            <p><strong>Coating</strong> <span id="coating">: Matt</span></p>
-                            <p><strong>Lamination</strong> <span id="lamination">: Matt</span></p>
-                            <p><strong>Type of Paper</strong> <span id="paperType">: Standard</span></p>
-                            <p><strong>Additional Details</strong> <span id="details">: </span></p>
+                            <p><strong>Paper Format</strong> <span id="paperFormat">:
+                                    <?php if (isset($_POST['paper_format'])) {
+                                        if ($_POST['paper_format'] == 'Custom') {
+                                            echo $_POST['custom_paper_format'];
+                                        } else {
+                                            echo $_POST['paper_format'];
+                                        }
+                                    }  ?></span>
+                            </p>
+                            <p><strong>Color or Black</strong> <span id="color">:
+                                    <?php if (isset($_POST['color'])) echo $_POST['color']; ?></span></p>
+                            <p><strong>Coating</strong> <span id="coating">:
+                                    <?php if (isset($_POST['coating'])) {
+                                        if ($_POST['coating'] == 'Custom') {
+                                            echo $_POST['customCoating'];
+                                        } else {
+                                            echo $_POST['coating'];
+                                        }
+                                    }  ?></span></p>
+                            <p><strong>Lamination</strong> <span id="lamination">:
+                                    <?php if (isset($_POST['lamination'])) {
+                                        if ($_POST['lamination'] == 'Custom') {
+                                            echo $_POST['customLamination'];
+                                        } else {
+                                            echo $_POST['lamination'];
+                                        }
+                                    }  ?></span></p>
+                            <p><strong>Type of Paper</strong> <span id="paperType">:
+                                    <?php if (isset($_POST['paperType'])) {
+                                        if ($_POST['paperType'] == 'Custom') {
+                                            echo $_POST['customPaper'];
+                                        } else {
+                                            echo $_POST['paperType'];
+                                        }
+                                    }  ?></span></p>
+                            <p><strong>Additional Details</strong> <span id="details">:
+                                    <?php if (isset($_POST['additionalDetails'])) echo $_POST['additionalDetails']; ?></span>
+                            </p>
                             <p id="additionalDetails"></p>
                         </td>
                     </tr>

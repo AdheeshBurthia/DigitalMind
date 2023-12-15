@@ -59,3 +59,7 @@ input[type="submit"]:hover {
 .custom-paper-input {
   display: none;
 }
+
+.required-input {
+  color: red;
+}

@@ -85,4 +85,5 @@ h3 {
   display: inline-block;
   width: 100px;
   text-align: left;
+  text-transform: capitalize;
 }
