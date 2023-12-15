@@ -32,7 +32,6 @@ function ShowCase($name, $slug, $stars, $price, $discount, $del, $images1, $imag
             </div>
 
         </div>
-
         <div class="showcase-content">
             <?php echo " <a href='product.php?product=" . $slug . "' class='showcase-category'>" . $name . "</a>";  ?>
 

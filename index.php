@@ -75,40 +75,6 @@ include "./components/Category.php";
                 </div>
             </div>
         </div>
-        </div>
-        <!-- <div class="category">
-            <div class="container">
-                <div class="category-item-container has-scrollbar">
-                    <?php
-                    $conn = $pdo->open();
-                    try {
-                        $stmt = $conn->prepare("SELECT category.*, COUNT(*) AS total_qty FROM products LEFT JOIN category ON category.id = products.category_id GROUP BY category_id ORDER BY total_qty DESC ");
-                        $stmt->execute();
-                        foreach ($stmt as $row) {
-                    ?>
-                            <div class="category-item">
-                                <div class="category-img-box">
-                                    <img src=<?php echo $row['icon'] ?> alt="dress & frock" width="30">
-                                </div>
-                                <div class="category-content-box">
-                                    <div class="category-content-flex">
-                                        <h3 class="category-item-title"><?php echo $row['name']; ?></h3>
-                                        <p class="category-item-amount"><?php echo $row['total_qty']; ?></p>
-                                    </div>
-                                    <?php
-                                    echo "<li><a href='category.php?category=" . $row['cat_slug'] . "' class='category-btn'>Show all</a></li>";  ?>
-                                </div>
-                            </div>
-                    <?php
-                        }
-                    } catch (PDOException $e) {
-                        echo "There is some problem in connection: " . $e->getMessage();
-                    }
-                    $pdo->close();
-                    ?>
-                </div>
-            </div>
-        </div> -->
         <!--- PRODUCT -->
         <div class="product-container">
             <div class="container" style="gap: 0;">
@@ -116,7 +82,7 @@ include "./components/Category.php";
                 <div class="sidebar  has-scrollbar" style="margin-right:30px ;" data-mobile-menu>
                     <?php Category($pdo); ?>
                     <div class="product-showcase">
-                        <h3 class="showcase-heading">best sellers</h3>
+                        <h3 class="showcase-heading">New Products</h3>
                         <div class="showcase-wrapper">
                             <div class="showcase-container">
                                 <?php
@@ -124,7 +90,7 @@ include "./components/Category.php";
                                 $conn = $pdo->open();
                                 try {
                                     $inc = 3;
-                                    $stmt = $conn->prepare("SELECT *, SUM(quantity) AS total_qty FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id WHERE MONTH(sales_date) = '$month' GROUP BY details.product_id ORDER BY total_qty DESC LIMIT 6");
+                                    $stmt = $conn->prepare("SELECT * FROM products ORDER BY date_created DESC LIMIT 5;");
                                     $stmt->execute();
                                     foreach ($stmt as $row) {
                                         $image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
@@ -142,13 +108,13 @@ include "./components/Category.php";
                 <div class="product-box">
                     <!--- PRODUCT GRID -->
                     <div class="product-main">
-                        <h2 class="title">New Products</h2>
+                        <h2 class="title">Products</h2>
                         <div class="product-grid">
                             <?php
                             $conn = $pdo->open();
                             try {
                                 $inc = 3;
-                                $stmt = $conn->prepare("SELECT *, SUM(quantity) AS total_qty FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id   GROUP BY details.product_id ORDER BY total_qty DESC LIMIT 6");
+                                $stmt = $conn->prepare("SELECT * FROM products ORDER BY date_created DESC;");
                                 $stmt->execute();
                                 foreach ($stmt as $row) {
                                     $image = (!empty($row['photo'])) ? 'images/' . $row['photo'] : 'images/noimage.jpg';
