@@ -123,7 +123,7 @@
 
                 <a href="cart_view.php">
                     <button class="action-btn">
-                        <ion-icon name="bag-handle-outline"></ion-icon>
+                        <img src="./dist/images/checkout.png" alt="checkout-icon" class="checkout-icon">
                         <span class="count"><span class="cart_count"></span></span>
                     </button>
                 </a>
@@ -139,7 +139,7 @@
 
                         <a href="logout.php">
                             <button class="action-btn">
-                                <img src="./dist/images/logout.png" alt="logout-icon" class="logout-icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
                             </button>
                         </a>
                         ';
@@ -147,7 +147,7 @@
                     echo '
                     <a href="login.php">
                         <button class="action-btn">
-                            <img src="./dist/images/login.png" alt="login-icon" class="login-icon">
+                            <ion-icon name="log-in-outline"></ion-icon>
                         </button>
                     </a>
                     ';
