@@ -2,47 +2,7 @@
     - HEADER
   -->
 <style>
-    /* ==============================================Translate============================================== */
-    .goog-te-gadget {
-        color: #fff;
-        font-size: 0;
-    }
 
-    .VIpgJd-ZVi9od-ORHb {
-        display: none;
-    }
-
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd,
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd:link,
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd:visited,
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd:hover,
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd:active {
-        font-size: 12px;
-        font-weight: bold;
-        color: #fff;
-        text-decoration: none;
-        display: none;
-    }
-
-    .VIpgJd-ZVi9od-ORHb-OEVmcd {
-        left: 0;
-        top: 0;
-        height: 39px;
-        width: 100%;
-        z-index: 10000001;
-        position: fixed;
-        border: none;
-        border-bottom: 1px solid #6B90DA;
-        margin: 0;
-        box-shadow: 0 0 8px 1px #999;
-        display: none;
-    }
-
-    #google_translate_element select {
-        background-color: #f59600;  
-        color: black !important;
-        padding: 10%;
-    }
 </style>
 <header>
 
