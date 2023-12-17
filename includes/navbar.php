@@ -1,7 +1,9 @@
 <!--
     - HEADER
   -->
+<style>
 
+</style>
 <header>
 
     <div class="header-top">
@@ -44,13 +46,14 @@
 
             <div class="header-top-actions">
 
-                <select name="language">
+                <!-- <select name="language">
 
                     <option value="en-US">English</option>
                     <option value="es-ES">Espa&ntilde;ol</option>
                     <option value="fr">Fran&ccedil;ais</option>
 
-                </select>
+                </select> -->
+                <div id="google_translate_element"></div>
 
             </div>
 
@@ -284,3 +287,25 @@
 </header>
 
 <script src="../dist/js/navbar.js"></script>
+
+
+
+<!-- ------------------------google translate------------------------ -->
+<script type="text/javascript">
+    // function googleTranslateElementInit() {
+    //     new google.translate.TranslateElement({
+    //         pageLanguage: 'en',
+    //         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    //     }, 'google_translate_element');
+    // }
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,fr,ar'
+        }, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- ------------------------google translate--------------------------- -->

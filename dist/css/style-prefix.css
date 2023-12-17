@@ -347,6 +347,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @-webkit-keyframes slideInOut {
+
   0%,
   45%,
   100% {
@@ -366,6 +367,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes slideInOut {
+
   0%,
   45%,
   100% {
@@ -647,7 +649,7 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 12px 0;
 }
 
-.accordion-menu > div {
+.accordion-menu>div {
   font-size: 14px;
 }
 
@@ -1956,6 +1958,7 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--davys-gray);
 }
 
+
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -2170,6 +2173,7 @@ footer {
  * responsive larger than 480px screen
  */
 @media (min-width: 480px) {
+
   /**
    * #CUSTOM PROPERTY
    */
@@ -2297,6 +2301,7 @@ footer {
  * responsive larger than 570px screen
  */
 @media (min-width: 570px) {
+
   /**
    * #HEADER
    */
@@ -2418,6 +2423,7 @@ footer {
  * responsive larger than 768px screen
  */
 @media (min-width: 768px) {
+
   /**
    * #CUSTOM PROPERTY
    */
@@ -2594,6 +2600,7 @@ footer {
  * responsive larger than 1024px screen
  */
 @media (min-width: 1024px) {
+
   /**
    * #CUSTOM PROPERTY
    */
@@ -2711,7 +2718,7 @@ footer {
     position: relative;
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title {
+  .desktop-menu-category-list .menu-category>.menu-title {
     position: relative;
     color: white;
     font-size: 14px;
@@ -2723,11 +2730,11 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title:hover {
+  .desktop-menu-category-list .menu-category>.menu-title:hover {
     color: #fcdfad;
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title::after {
+  .desktop-menu-category-list .menu-category>.menu-title::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2746,7 +2753,7 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title:hover::after {
+  .desktop-menu-category-list .menu-category>.menu-title:hover::after {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
     transform: scaleX(1);
@@ -2781,7 +2788,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover > .dropdown-panel {
+  .desktop-menu-category-list .menu-category:hover>.dropdown-panel {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -2851,7 +2858,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover > .dropdown-list {
+  .desktop-menu-category-list .menu-category:hover>.dropdown-list {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -3085,6 +3092,7 @@ footer {
  * responsive larger than 1200px screen
  */
 @media (min-width: 1200px) {
+
   /**
    * #REUSED STYLE 
    */
@@ -3122,7 +3130,7 @@ footer {
   /**
    * #PRODUCT
    */
-  .product-featured .showcase > div {
+  .product-featured .showcase>div {
     min-width: -webkit-calc(50% - 10px);
     min-width: calc(50% - 10px);
   }
@@ -3206,6 +3214,7 @@ footer {
  * responsive larger than 1400px screen
  */
 @media (min-width: 1400px) {
+
   /**
    * #BASE 
    */
@@ -3231,4 +3240,48 @@ footer {
     left: 110px;
     max-width: 460px;
   }
+}
+
+/* ===================================================================================================== */
+/* ==============================================Translate============================================== */
+/* ===================================================================================================== */
+.goog-te-gadget {
+  color: #fff;
+  font-size: 0;
+}
+
+.VIpgJd-ZVi9od-ORHb {
+  display: none;
+}
+
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd:link,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd:visited,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd:hover,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd:active {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  display: none;
+}
+
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  left: 0;
+  top: 0;
+  height: 39px;
+  width: 100%;
+  z-index: 10000001;
+  position: fixed;
+  border: none;
+  border-bottom: 1px solid #6B90DA;
+  margin: 0;
+  box-shadow: 0 0 8px 1px #999;
+  display: none;
+}
+
+#google_translate_element select {
+  background-color: #f59600;
+  color: black !important;
+  padding: 10%;
 }
