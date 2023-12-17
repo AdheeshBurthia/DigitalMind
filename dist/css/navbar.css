@@ -476,6 +476,14 @@ body::-webkit-scrollbar-thumb:hover {
   color: #000;
   margin-bottom: 20px;
   font-family: "Daggersquare", sans-serif;
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-logo img {
+  margin: auto;
 }
 
 .header-search-container {
