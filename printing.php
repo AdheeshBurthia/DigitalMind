@@ -19,7 +19,7 @@ include 'includes/scripts.php';
 
     <section class="printing">
         <form action="quote.php" method="post" enctype="multipart/form-data" class="printing-form">
-            <label for="productName">Product Name: <span class="required-input">*</span></label>
+            <label for="productName">Printing Name: <span class="required-input">*</span></label>
             <input type="text" id="productName" name="productName" required>
             <br>
 
@@ -103,11 +103,11 @@ include 'includes/scripts.php';
                 <br><br>
             </div>
 
-            <label for="lamination">Printing Sides: <span class="required-input">*</span></label>
-            <select id="lamination" name="lamination" required>
-                <option value="none">None</option>
-                <option value="glossy">Single Sided</option>
-                <option value="matte">Double Sided</option>
+            <label for="printingSide">Printing Sides: <span class="required-input">*</span></label>
+            <select id="printingSide" name="printingSide" required>
+                <option value="None">None</option>
+                <option value="Single Sided">Single Sided</option>
+                <option value="Double Sided">Double Sided</option>
             </select>
             <br><br>
 
@@ -127,58 +127,58 @@ include 'includes/scripts.php';
     <?php include 'includes/footer.php'; ?>
 
     <script>
-    // JavaScript code
-    window.addEventListener("DOMContentLoaded", function() {
-        var paperFormatSelect = document.getElementById("paper_format");
-        var customPaperInput = document.getElementById("custom_paper_input");
+        // JavaScript code
+        window.addEventListener("DOMContentLoaded", function() {
+            var paperFormatSelect = document.getElementById("paper_format");
+            var customPaperInput = document.getElementById("custom_paper_input");
 
-        paperFormatSelect.addEventListener("change", function() {
-            if (paperFormatSelect.value === "Custom") {
-                customPaperInput.style.display = "block";
-            } else {
-                customPaperInput.style.display = "none";
-            }
+            paperFormatSelect.addEventListener("change", function() {
+                if (paperFormatSelect.value === "Custom") {
+                    customPaperInput.style.display = "block";
+                } else {
+                    customPaperInput.style.display = "none";
+                }
+            });
         });
-    });
 
-    window.addEventListener("DOMContentLoaded", function() {
-        var coatingSelect = document.getElementById("coating");
-        var customCoatingInput = document.getElementById("customCoatingInput");
+        window.addEventListener("DOMContentLoaded", function() {
+            var coatingSelect = document.getElementById("coating");
+            var customCoatingInput = document.getElementById("customCoatingInput");
 
-        coatingSelect.addEventListener("change", function() {
-            if (coatingSelect.value === "Custom") {
-                customCoatingInput.style.display = "block";
-            } else {
-                customCoatingInput.style.display = "none";
-            }
+            coatingSelect.addEventListener("change", function() {
+                if (coatingSelect.value === "Custom") {
+                    customCoatingInput.style.display = "block";
+                } else {
+                    customCoatingInput.style.display = "none";
+                }
+            });
         });
-    });
 
-    window.addEventListener("DOMContentLoaded", function() {
-        var laminationSelect = document.getElementById("lamination");
-        var customLaminationInput = document.getElementById("customLaminationInput");
+        window.addEventListener("DOMContentLoaded", function() {
+            var laminationSelect = document.getElementById("lamination");
+            var customLaminationInput = document.getElementById("customLaminationInput");
 
-        laminationSelect.addEventListener("change", function() {
-            if (laminationSelect.value === "Custom") {
-                customLaminationInput.style.display = "block";
-            } else {
-                customLaminationInput.style.display = "none";
-            }
+            laminationSelect.addEventListener("change", function() {
+                if (laminationSelect.value === "Custom") {
+                    customLaminationInput.style.display = "block";
+                } else {
+                    customLaminationInput.style.display = "none";
+                }
+            });
         });
-    });
 
-    window.addEventListener("DOMContentLoaded", function() {
-        var paperTypeSelect = document.getElementById("paperType");
-        var customPaperInput = document.getElementById("customPaperInput");
+        window.addEventListener("DOMContentLoaded", function() {
+            var paperTypeSelect = document.getElementById("paperType");
+            var customPaperInput = document.getElementById("customPaperInput");
 
-        paperTypeSelect.addEventListener("change", function() {
-            if (paperTypeSelect.value === "Custom") {
-                customPaperInput.style.display = "block";
-            } else {
-                customPaperInput.style.display = "none";
-            }
+            paperTypeSelect.addEventListener("change", function() {
+                if (paperTypeSelect.value === "Custom") {
+                    customPaperInput.style.display = "block";
+                } else {
+                    customPaperInput.style.display = "none";
+                }
+            });
         });
-    });
     </script>
 
 </body>

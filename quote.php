@@ -23,8 +23,8 @@ include 'includes/scripts.php';
                 <tbody>
                     <tr>
                         <td class="product-details">
-                            <h3>Product Details</h3>
-                            <p><strong>Product Name:</strong> <span id="productName">:
+                            <h3>Printing Details</h3>
+                            <p><strong>Printing Name:</strong> <span id="productName">:
                                     <?php if (isset($_POST['productName'])) echo $_POST['productName']; ?></span></p>
                             <p><strong>Quantity:</strong> <span id="quantity">:
                                     <?php if (isset($_POST['quantity'])) echo $_POST['quantity']; ?></span></p>
@@ -65,6 +65,10 @@ include 'includes/scripts.php';
                                         } else {
                                             echo $_POST['paperType'];
                                         }
+                                    }  ?></span></p>
+                            <p><strong>Printing Sides</strong> <span id="printingSide">:
+                                    <?php if (isset($_POST['printingSide'])) {
+                                        echo $_POST['printingSide'];
                                     }  ?></span></p>
                             <p><strong>Additional Details</strong> <span id="details">:
                                     <?php if (isset($_POST['additionalDetails'])) echo $_POST['additionalDetails']; ?></span>

@@ -2,7 +2,7 @@
 include 'includes/session.php';
 $conn = $pdo->open();
 
-if (isset($_POST['btn-quote'])) {
+if (isset($_POST['verify-quote'])) {
     if (!empty($_POST['product_name']) && !empty($_POST['quantity']) && !empty($_POST['paper_format']) && !empty($_POST['color']) && !empty($_POST['coating']) && !empty($_POST['lamination']) && !empty($_POST['paper_type']) && !empty($_POST['details']) && !empty($_POST['additional_details'])) {
         $product_name = $_POST['product_name'];
         $quantity = $_POST['quantity'];
