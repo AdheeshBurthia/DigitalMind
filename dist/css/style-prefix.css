@@ -3366,7 +3366,7 @@ footer {
 /* ==============================================Translate============================================== */
 /* ===================================================================================================== */
 .goog-te-gadget {
-  color: #fff;
+  color: #fff !important;
   font-size: 0;
 }
 
@@ -3403,5 +3403,10 @@ footer {
 #google_translate_element select {
   background-color: #f59600;
   color: black !important;
-  padding: 10%;
+  padding: 5% 10%;
+  margin: 10% 0 0 0;
+}
+#hydrated #translated-ltr{
+  position: relative;
+  top: -39px;
 }
