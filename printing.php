@@ -1,6 +1,8 @@
 <?php
+session_start();
 include 'includes/header.php';
 include 'includes/scripts.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +20,27 @@ include 'includes/scripts.php';
     <?php include 'includes/navbar.php'; ?>
 
     <section class="printing">
-        <form action="quote.php" method="post" enctype="multipart/form-data" class="printing-form">
-            <label for="productName">Product Name: <span class="required-input">*</span></label>
-            <input type="text" id="productName" name="productName" required>
+        <form action="verify-quote.php" method="post" enctype="multipart/form-data" class="printing-form">
+            <?php
+            if (isset($_SESSION['error'])) {
+                echo "
+                <div class='callout callout-danger text-center'>
+                    <p>" . $_SESSION['error'] . "</p> 
+                </div>
+                ";
+                unset($_SESSION['error']);
+            }
+            if (isset($_SESSION['success'])) {
+                echo "
+                <div class='callout callout-success text-center'>
+                    <p>" . $_SESSION['success'] . "</p> 
+                </div>
+                ";
+                unset($_SESSION['success']);
+            }
+            ?>
+            <label for="printingName">Printing Name: <span class="required-input">*</span></label>
+            <input type="text" id="printingName" name="printingName" required>
             <br>
 
             <label for="paper_format">Paper Format: <span class="required-input">*</span></label>
@@ -103,21 +123,21 @@ include 'includes/scripts.php';
                 <br><br>
             </div>
 
-            <label for="lamination">Printing Sides: <span class="required-input">*</span></label>
-            <select id="lamination" name="lamination" required>
-                <option value="none">None</option>
-                <option value="glossy">Single Sided</option>
-                <option value="matte">Double Sided</option>
+            <label for="printingSide">Printing Sides: <span class="required-input">*</span></label>
+            <select id="printingSide" name="printingSide" required>
+                <option value="None">None</option>
+                <option value="Single Sided">Single Sided</option>
+                <option value="Double Sided">Double Sided</option>
             </select>
             <br><br>
 
             <label for="additionalDetails">Additional Details:</label>
             <textarea id="additionalDetails" name="additionalDetails" rows="4"></textarea>
             <br><br>
-
+            <!-- 
             <label for="file">Upload Artwork:</label>
             <input type="file" id="file" name="file">
-            <br>
+            <br> -->
 
             <input type="submit" value="Ask for Quotation" name="btn-quote">
         </form>
