@@ -1,6 +1,12 @@
 <?php
+session_start();
 include 'includes/header.php';
 include 'includes/scripts.php';
+
+if (!isset($_SESSION['printingName'])) {
+    header("Location: printing.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,59 +25,74 @@ include 'includes/scripts.php';
 
     <section class="quotation-details">
         <div class="quotation-container">
+            <?php
+            if (isset($_SESSION['error'])) {
+                echo "
+                <div class='callout callout-danger text-center'>
+                    <p>" . $_SESSION['error'] . "</p> 
+                </div>
+                ";
+                unset($_SESSION['error']);
+            }
+            if (isset($_SESSION['success'])) {
+                echo "
+                <div class='callout callout-success text-center'>
+                    <p>" . $_SESSION['success'] . "</p> 
+                </div>
+                ";
+                unset($_SESSION['success']);
+            }
+            ?>
             <table>
                 <tbody>
                     <tr>
                         <td class="product-details">
                             <h3>Printing Details</h3>
-                            <p><strong>Printing Name:</strong> <span id="productName">:
-                                    <?php if (isset($_POST['productName'])) echo $_POST['productName']; ?></span></p>
+                            <p><strong>Printing Name:</strong> <span id="printingName">:
+                                    <?php if (isset($_SESSION['printingName'])) echo $_SESSION['printingName']; ?></span>
+                            </p>
                             <p><strong>Quantity:</strong> <span id="quantity">:
-                                    <?php if (isset($_POST['quantity'])) echo $_POST['quantity']; ?></span></p>
+                                    <?php if (isset($_SESSION['quantity'])) echo $_SESSION['quantity']; ?></span></p>
                         </td>
                         <td class="additional-info">
                             <h3>Additional Information</h3>
                             <p><strong>Paper Format</strong> <span id="paperFormat">:
-                                    <?php if (isset($_POST['paper_format'])) {
-                                        if ($_POST['paper_format'] == 'Custom') {
-                                            echo $_POST['custom_paper_format'];
-                                        } else {
-                                            echo $_POST['paper_format'];
-                                        }
+                                    <?php if (isset($_SESSION['paper_format'])) {
+                                        echo $_SESSION['paper_format'];
                                     }  ?></span>
                             </p>
                             <p><strong>Color or Black</strong> <span id="color">:
-                                    <?php if (isset($_POST['color'])) echo $_POST['color']; ?></span></p>
+                                    <?php if (isset($_SESSION['color'])) echo $_SESSION['color']; ?></span></p>
                             <p><strong>Coating</strong> <span id="coating">:
-                                    <?php if (isset($_POST['coating'])) {
-                                        if ($_POST['coating'] == 'Custom') {
-                                            echo $_POST['customCoating'];
+                                    <?php if (isset($_SESSION['coating'])) {
+                                        if ($_SESSION['coating'] == 'Custom') {
+                                            echo $_SESSION['customCoating'];
                                         } else {
-                                            echo $_POST['coating'];
+                                            echo $_SESSION['coating'];
                                         }
                                     }  ?></span></p>
                             <p><strong>Lamination</strong> <span id="lamination">:
-                                    <?php if (isset($_POST['lamination'])) {
-                                        if ($_POST['lamination'] == 'Custom') {
-                                            echo $_POST['customLamination'];
+                                    <?php if (isset($_SESSION['lamination'])) {
+                                        if ($_SESSION['lamination'] == 'Custom') {
+                                            echo $_SESSION['customLamination'];
                                         } else {
-                                            echo $_POST['lamination'];
+                                            echo $_SESSION['lamination'];
                                         }
                                     }  ?></span></p>
                             <p><strong>Type of Paper</strong> <span id="paperType">:
-                                    <?php if (isset($_POST['paperType'])) {
-                                        if ($_POST['paperType'] == 'Custom') {
-                                            echo $_POST['customPaper'];
+                                    <?php if (isset($_SESSION['paperType'])) {
+                                        if ($_SESSION['paperType'] == 'Custom') {
+                                            echo $_SESSION['customPaper'];
                                         } else {
-                                            echo $_POST['paperType'];
+                                            echo $_SESSION['paperType'];
                                         }
                                     }  ?></span></p>
                             <p><strong>Printing Sides</strong> <span id="printingSide">:
-                                    <?php if (isset($_POST['printingSide'])) {
-                                        echo $_POST['printingSide'];
+                                    <?php if (isset($_SESSION['printingSide'])) {
+                                        echo $_SESSION['printingSide'];
                                     }  ?></span></p>
                             <p><strong>Additional Details</strong> <span id="details">:
-                                    <?php if (isset($_POST['additionalDetails'])) echo $_POST['additionalDetails']; ?></span>
+                                    <?php if (isset($_SESSION['additionalDetails'])) echo $_SESSION['additionalDetails']; ?></span>
                             </p>
                             <p id="additionalDetails"></p>
                         </td>
@@ -79,7 +100,7 @@ include 'includes/scripts.php';
                 </tbody>
             </table>
 
-            <div class="customer-details">
+            <form action="verify-quote.php" method="post" class="customer-details">
                 <h3>Customer Details</h3>
                 <div class="input-row">
                     <div class="input-group">
@@ -99,9 +120,12 @@ include 'includes/scripts.php';
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                 </div>
-            </div>
+                <div class="input-row">
+                    <input type="submit" value="Confirm" name="confirmQuote" id="confirmQuote" class="confirmQuote">
+                    <!-- <input type="submit" value="Edit Printing" id="editButton" class="editButton"> -->
+                </div>
 
-            <button id="confirmButton" type="button" class="confirmButton">Confirm</button>
+            </form>
         </div>
     </section>
 

@@ -1,6 +1,8 @@
 <?php
+session_start();
 include 'includes/header.php';
 include 'includes/scripts.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +20,27 @@ include 'includes/scripts.php';
     <?php include 'includes/navbar.php'; ?>
 
     <section class="printing">
-        <form action="quote.php" method="post" enctype="multipart/form-data" class="printing-form">
-            <label for="productName">Printing Name: <span class="required-input">*</span></label>
-            <input type="text" id="productName" name="productName" required>
+        <form action="verify-quote.php" method="post" enctype="multipart/form-data" class="printing-form">
+            <?php
+            if (isset($_SESSION['error'])) {
+                echo "
+                <div class='callout callout-danger text-center'>
+                    <p>" . $_SESSION['error'] . "</p> 
+                </div>
+                ";
+                unset($_SESSION['error']);
+            }
+            if (isset($_SESSION['success'])) {
+                echo "
+                <div class='callout callout-success text-center'>
+                    <p>" . $_SESSION['success'] . "</p> 
+                </div>
+                ";
+                unset($_SESSION['success']);
+            }
+            ?>
+            <label for="printingName">Printing Name: <span class="required-input">*</span></label>
+            <input type="text" id="printingName" name="printingName" required>
             <br>
 
             <label for="paper_format">Paper Format: <span class="required-input">*</span></label>
@@ -114,10 +134,10 @@ include 'includes/scripts.php';
             <label for="additionalDetails">Additional Details:</label>
             <textarea id="additionalDetails" name="additionalDetails" rows="4"></textarea>
             <br><br>
-
+            <!-- 
             <label for="file">Upload Artwork:</label>
             <input type="file" id="file" name="file">
-            <br>
+            <br> -->
 
             <input type="submit" value="Ask for Quotation" name="btn-quote">
         </form>
@@ -127,58 +147,58 @@ include 'includes/scripts.php';
     <?php include 'includes/footer.php'; ?>
 
     <script>
-        // JavaScript code
-        window.addEventListener("DOMContentLoaded", function() {
-            var paperFormatSelect = document.getElementById("paper_format");
-            var customPaperInput = document.getElementById("custom_paper_input");
+    // JavaScript code
+    window.addEventListener("DOMContentLoaded", function() {
+        var paperFormatSelect = document.getElementById("paper_format");
+        var customPaperInput = document.getElementById("custom_paper_input");
 
-            paperFormatSelect.addEventListener("change", function() {
-                if (paperFormatSelect.value === "Custom") {
-                    customPaperInput.style.display = "block";
-                } else {
-                    customPaperInput.style.display = "none";
-                }
-            });
+        paperFormatSelect.addEventListener("change", function() {
+            if (paperFormatSelect.value === "Custom") {
+                customPaperInput.style.display = "block";
+            } else {
+                customPaperInput.style.display = "none";
+            }
         });
+    });
 
-        window.addEventListener("DOMContentLoaded", function() {
-            var coatingSelect = document.getElementById("coating");
-            var customCoatingInput = document.getElementById("customCoatingInput");
+    window.addEventListener("DOMContentLoaded", function() {
+        var coatingSelect = document.getElementById("coating");
+        var customCoatingInput = document.getElementById("customCoatingInput");
 
-            coatingSelect.addEventListener("change", function() {
-                if (coatingSelect.value === "Custom") {
-                    customCoatingInput.style.display = "block";
-                } else {
-                    customCoatingInput.style.display = "none";
-                }
-            });
+        coatingSelect.addEventListener("change", function() {
+            if (coatingSelect.value === "Custom") {
+                customCoatingInput.style.display = "block";
+            } else {
+                customCoatingInput.style.display = "none";
+            }
         });
+    });
 
-        window.addEventListener("DOMContentLoaded", function() {
-            var laminationSelect = document.getElementById("lamination");
-            var customLaminationInput = document.getElementById("customLaminationInput");
+    window.addEventListener("DOMContentLoaded", function() {
+        var laminationSelect = document.getElementById("lamination");
+        var customLaminationInput = document.getElementById("customLaminationInput");
 
-            laminationSelect.addEventListener("change", function() {
-                if (laminationSelect.value === "Custom") {
-                    customLaminationInput.style.display = "block";
-                } else {
-                    customLaminationInput.style.display = "none";
-                }
-            });
+        laminationSelect.addEventListener("change", function() {
+            if (laminationSelect.value === "Custom") {
+                customLaminationInput.style.display = "block";
+            } else {
+                customLaminationInput.style.display = "none";
+            }
         });
+    });
 
-        window.addEventListener("DOMContentLoaded", function() {
-            var paperTypeSelect = document.getElementById("paperType");
-            var customPaperInput = document.getElementById("customPaperInput");
+    window.addEventListener("DOMContentLoaded", function() {
+        var paperTypeSelect = document.getElementById("paperType");
+        var customPaperInput = document.getElementById("customPaperInput");
 
-            paperTypeSelect.addEventListener("change", function() {
-                if (paperTypeSelect.value === "Custom") {
-                    customPaperInput.style.display = "block";
-                } else {
-                    customPaperInput.style.display = "none";
-                }
-            });
+        paperTypeSelect.addEventListener("change", function() {
+            if (paperTypeSelect.value === "Custom") {
+                customPaperInput.style.display = "block";
+            } else {
+                customPaperInput.style.display = "none";
+            }
         });
+    });
     </script>
 
 </body>
