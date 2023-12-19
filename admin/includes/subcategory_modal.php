@@ -5,15 +5,38 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><b>Add New Category</b></h4>
+        <h4 class="modal-title"><b>Add New Subcategory</b></h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="category_add.php">
+        <form class="form-horizontal" method="POST" action="subcategory_add.php">
           <div class="form-group">
             <label for="name" class="col-sm-3 control-label">Name</label>
 
             <div class="col-sm-9">
               <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-sm-3 control-label">Select category</label>
+
+            <div class="col-sm-9">
+              <select class="form-control" id="name" name="name" required>
+                <?php
+                $conn = $pdo->open();
+
+                $stmt = $conn->prepare("SELECT * FROM category");
+                $stmt->execute();
+
+                foreach ($stmt as $crow) {
+                  $selected = ($crow['id'] == $catid) ? 'selected' : '';
+                  echo "
+                            <option value='" . $crow['id'] . "' " . $selected . ">" . $crow['name'] . "</option>
+                          ";
+                }
+
+                $pdo->close();
+                ?>
+              </select>
             </div>
           </div>
       </div>
@@ -33,10 +56,10 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><b>Edit Category</b></h4>
+        <h4 class="modal-title"><b>Edit Subcategory</b></h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="category_edit.php">
+        <form class="form-horizontal" method="POST" action="subcategory_edit.php">
           <input type="hidden" class="catid" name="id">
           <div class="form-group">
             <label for="edit_name" class="col-sm-3 control-label">Name</label>
@@ -65,10 +88,10 @@
         <h4 class="modal-title"><b>Deleting...</b></h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="category_delete.php">
+        <form class="form-horizontal" method="POST" action="subcategory_delete.php">
           <input type="hidden" class="catid" name="id">
           <div class="text-center">
-            <p>DELETE CATEGORY</p>
+            <p>DELETE Subcategory</p>
             <h2 class="bold catname"></h2>
           </div>
       </div>

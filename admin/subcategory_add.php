@@ -12,12 +12,12 @@ if (isset($_POST['add'])) {
 	$row = $stmt->fetch();
 
 	if ($row['numrows'] > 0) {
-		$_SESSION['error'] = 'Category already exist';
+		$_SESSION['error'] = 'Subcategory already exist';
 	} else {
 		try {
 			$stmt = $conn->prepare("INSERT INTO admin subcategory_add.php (name) VALUES (:name)");
 			$stmt->execute(['name' => $name]);
-			$_SESSION['success'] = 'Category added successfully';
+			$_SESSION['success'] = 'Subcategory added successfully';
 		} catch (PDOException $e) {
 			$_SESSION['error'] = $e->getMessage();
 		}
