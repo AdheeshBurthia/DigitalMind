@@ -20,7 +20,7 @@
             <label for="name" class="col-sm-3 control-label">Select category</label>
 
             <div class="col-sm-9">
-              <select class="form-control" id="name" name="name" required>
+              <select class="form-control" id="category" name="category" required>
                 <?php
                 $conn = $pdo->open();
 

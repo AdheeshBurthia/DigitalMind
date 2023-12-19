@@ -1,22 +1,27 @@
-
 <?php
 include 'includes/session.php';
 
 if (isset($_POST['add'])) {
 	$name = $_POST['name'];
+	$category = $_POST['category'];
 
 	$conn = $pdo->open();
 
-	$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM admin subcategory_add.php WHERE name=:name");
+	// Fix the table name in the SELECT query
+	$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM subcategory WHERE name=:name");
 	$stmt->execute(['name' => $name]);
 	$row = $stmt->fetch();
 
 	if ($row['numrows'] > 0) {
-		$_SESSION['error'] = 'Subcategory already exist';
+		$_SESSION['error'] = 'Subcategory already exists';
 	} else {
 		try {
-			$stmt = $conn->prepare("INSERT INTO admin subcategory_add.php (name) VALUES (:name)");
-			$stmt->execute(['name' => $name]);
+			// Fix the table name in the INSERT INTO query
+			$stmt = $conn->prepare("INSERT INTO subcategory (name, category_id) VALUES (:name, :category)");
+
+			// Bind both parameters in a single execute call
+			$stmt->execute(['name' => $name, 'category' => $category]); // Corrected parameter name
+
 			$_SESSION['success'] = 'Subcategory added successfully';
 		} catch (PDOException $e) {
 			$_SESSION['error'] = $e->getMessage();
@@ -29,5 +34,3 @@ if (isset($_POST['add'])) {
 }
 
 header('location: subcategory.php');
-
-?>
