@@ -17,7 +17,7 @@ if (isset($_POST['add'])) {
 	} else {
 		try {
 			// Fix the table name in the INSERT INTO query
-			$stmt = $conn->prepare("INSERT INTO subcategory (name, category_id) VALUES (:name, :category)");
+			$stmt = $conn->prepare("INSERT INTO subcategory (name, subcategory_id) VALUES (:name, :category)");
 
 			// Bind both parameters in a single execute call
 			$stmt->execute(['name' => $name, 'category' => $category]); // Corrected parameter name

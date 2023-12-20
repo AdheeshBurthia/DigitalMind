@@ -13,8 +13,8 @@ function Category($pdo)
                 <?php
                 $conn = $pdo->open();
                 try {
-                    $stmt = $conn->prepare("SELECT category.*, subcategory.* FROM subcategory LEFT JOIN category ON category.id = subcategory.category_id
-                       GROUP BY category_id");
+                    $stmt = $conn->prepare("SELECT  category.name AS category_name,category.id,category.icon,cat_slug, subcategory.* FROM subcategory LEFT JOIN category ON category.id = subcategory.subcategory_id
+                       GROUP BY subcategory_id");
                     $stmt->execute();
                     foreach ($stmt as $row) {
                 ?>
@@ -22,7 +22,7 @@ function Category($pdo)
                             <button class="sidebar-accordion-menu" data-accordion-btn>
                                 <div class="menu-title-flex">
                                     <img src=<?php echo $row['icon'] ?> alt="clothes" width="20" height="20" class="menu-title-img">
-                                    <p class="menu-title"><?php echo $row['name']; ?> </p>
+                                    <p class="menu-title"><?php echo $row['category_name']; ?> </p>
                                 </div>
                                 <div>
                                     <ion-icon name="add-outline" class="add-icon"></ion-icon>
@@ -31,9 +31,9 @@ function Category($pdo)
                             </button>
                             <ul class="sidebar-submenu-category-list" data-accordion>
                                 <?php
-                                $x = $row['category_id'];
-                                $stmt = $conn->prepare("SELECT subcategory.*, COUNT(products.id) as product_count FROM subcategory LEFT JOIN products ON subcategory.id = products.category_id WHERE subcategory.category_id = :category_id GROUP BY subcategory.id");
-                                $stmt->bindParam(':category_id', $x);
+                                $x = $row['subcategory_id'];
+                                $stmt = $conn->prepare("SELECT subcategory.*, COUNT(products.id) as product_count FROM subcategory LEFT JOIN products ON subcategory.id = products.subcategory_id WHERE subcategory.subcategory_id = :subcategory_id GROUP BY subcategory.id");
+                                $stmt->bindParam(':subcategory_id', $x);
                                 $stmt->execute();
                                 foreach ($stmt as $subcategory) {
                                 ?>
