@@ -3,10 +3,8 @@
 
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
-
     <?php include 'includes/navbar.php'; ?>
     <?php include 'includes/menubar.php'; ?>
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -15,9 +13,15 @@
           Category
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li>Products</li>
-          <li class="active">Category</li>
+          <li>
+            <a href="#"><i class="fa fa-dashboard"></i>Home</a>
+          </li>
+          <li>
+            Products
+          </li>
+          <li class="active">
+            Category
+          </li>
         </ol>
       </section>
 
@@ -60,7 +64,6 @@
                   <tbody>
                     <?php
                     $conn = $pdo->open();
-
                     try {
                       $stmt = $conn->prepare("SELECT * FROM subcategory");
                       $stmt->execute();
@@ -78,7 +81,6 @@
                     } catch (PDOException $e) {
                       echo $e->getMessage();
                     }
-
                     $pdo->close();
                     ?>
                   </tbody>
@@ -88,14 +90,11 @@
           </div>
         </div>
       </section>
-
     </div>
     <?php include 'includes/footer.php'; ?>
     <?php include 'includes/subcategory_modal.php'; ?>
-
   </div>
   <!-- ./wrapper -->
-
   <?php include 'includes/scripts.php'; ?>
   <script>
     $(function() {
@@ -112,7 +111,6 @@
         var id = $(this).data('id');
         getRow(id);
       });
-
     });
 
     function getRow(id) {
